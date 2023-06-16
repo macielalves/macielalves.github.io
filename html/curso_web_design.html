@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Curso de Web Design</title>
+    <style>
+        body, html {
+            background: #05020c;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            height: 100%;
+        }
+
+        h1 {
+            width: fit-content;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(#111, #111) padding-box, linear-gradient(45deg, #09009f, #00ff95) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            color: #e9e9e9;
+            margin: 0 auto;
+        }
+
+        nav {
+            width: clamp(100px, 100%, 400px);
+            height: fit-content;
+            margin: 2em auto;
+            padding: 2em;
+            background: -webkit-linear-gradient(45deg, #181165, #000000);
+            border-radius: 2em;
+        }
+
+        section {
+            background: #050d59;
+            text-align: left;
+            width: clamp(400px, 90%, 1200px);
+            height: fit-content;
+            border-radius: 2em;
+            margin: 0 auto;
+            margin-top: 5em;
+        }
+
+
+        article {
+            float-wrap: wrap;
+            width: clamp(200px, 70%, 600px);
+            margin: 0 auto;
+            padding: 2em;
+        }
+
+        footer {
+            text-align: center;
+            color: whitesmoke;
+            line-height: 1.5em;
+            padding: 1em;
+        }
+
+        img {
+            float: left;
+            /* filter: drop-shadow(5px 5px 5px black); */
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul a {
+            color: #0031ff;
+        }
+
+        ul a:hover {
+            color: #00b2ff;
+        }
+
+        a {
+            text-decoration: underline;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 600;
+            color: #cbcbcb;
+        }
+
+        a:hover {
+            color: #1f1f1f;
+        }
+
+        h2 {
+            color: whitesmoke;
+            width: fit-content;
+            background: -webkit-linear-gradient(45deg, blue, #00ffe8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        h4 {
+            display: inline-block;
+            color: #CCCCCC;
+        }
+
+        p {
+            color: white;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+<h1 id="titulo">Cursos de Web Design</h1>
+<nav>
+    <h2>Conheça nossos cursos:</h2>
+    <ul>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#dreamweaver">DreamWeaver</a></li>
+        <li><a href="#flash">Flash</a></li>
+        <li><a href="#fireworks">Fireworks</a></li>
+    </ul>
+</nav>
+<section id="html">
+    <article>
+        <h3>HTML</h3>
+        <img src="img/HTML5.png" alt="logo HTML5" width="256px">
+        <h4>O que é?</h4>
+        <p>HTML (acrônimo para a expressão inglesa HyperText Markup Language, que significa Linguagem de
+            Marcação de Hipertexto) é uma linguagem de marcação utilizada para produzir páginas na Web.
+            Documentos HTML podem ser interpretados por navegadores.</p>
+        <h4>Sobre o curso:</h4>
+        <p>Este curso ensina desde os conceitos básicos da linguagem HTML, até a criação de formulários para a
+            Web, ideal para inciantes, o par quem quer um guia de consulta, também possui um Glossário com todas as
+            palavras mais utillizadas na Internet</p>
+        <a href="#titulo" id="to-start">início</a>
+    </article>
+</section>
+
+
+<section id="dreamweaver">
+    <article>
+        <h3>Dreamweaver</h3>
+        <img src="img/adobe_dreamweaver.png" alt="adobe_dreamweaver" width="256px">
+        <h4>O que é?</h4>
+        <p>O Macromedia Dreamweaver é um software de criação para a web criada pela Macromedia (agora Adobe
+            Systems), que está atualmente na versão CS3. Versões iniciais da aplicação serviam como um simples
+            editor HTML WYSIWYG ("What You See Is What You Get", ou "O que você vê é o que você tem"), porém
+            versões mais recentes incorporaram notável suporte para muitas outras tecnologias web tais como XHTML,
+            CSS, JavaScript e vários scripts de servidor. Desde o final dos anos 90, o Dreamweaver vem tendo um
+            sucesso crescente e hoje domina cerca de 80% do mercado de editores HTML.
+        </p>
+        <h4> Sobre o curso:</h4>
+        <p>
+            Torne-se um Web Designer, uma das profissões mais bem pagas da atualidade. Aprenda rapidamente e
+            invista muito pouco com este treinamento interativo único. Neste curso você aprenderá a dominar o
+            Dreamweaver CS3 o software mais usado para criação de sites de sucesso.</p>
+        <p>São dezenas de tutoriais ricamente ilustrados com imagens e gráficos explicativos e mais de 50 videoaulas
+            em alta resolução, narradas em português de maneira clara e didática.</p>
+        <a href="#titulo" class="to-start">início</a>
+    </article>
+</section>
+<section id="flash">
+    <article>
+        <h3>Flash</h3>
+        <img src="img/adobe_flash.png" alt="adobe_flash" width="256px">
+        <h4>O que é?</h4>
+        <p>Adobe Flash (antes: Macromedia Flash), ou simplesmente Flash, é um software primariamente de gráfico
+            vetorial - apesar de suportar imagens bitmap e vídeos - utilizado geralmente para a criação de animações
+            interativas que funcionam embutidas num navegador web. O produto era desenvolvido e comercializadopela
+            Macromedia, empresa especializada em desenvolver programas que auxiliam o processo de criação
+            de páginas web.</p>
+        <p>Em versões recentes (a partir da 5), a Macromedia expandiu a utilização do Flash para além de simples
+            animações, mas também para uma ferramenta de desenvolvimento de aplicações completas. Isso graças
+            aos avanços na linguagem ActionScript, que é a linguagem de programação utilizada em aplicações de
+            arquivos flashes (.swf). A terceira versão desta linguagem acaba de ser lançada, tornando mais fácil e
+            rápido criar aplicações para web, além de contar com recursos bem mais poderosos.</p>
+        <h4>Sobre o curso:</h4>
+        <p>Este Curso de Flash visa fornecer todos os conhecimentos necessários para o desenvolvimento de sites,
+            jogos e aplicações multimídia em ambiente Flash.</p>
+        <p>Neste curso de 21 aulas o aluno aprofundar as ferramentas de desenho e animação no Flash, dominar os
+            elementos decisivos na construção de interfaces como as layers, cenas, símbolos e movie clips e
+            programar
+            ao mais alto nível no Flash com o ActionScript.</p>
+        <a href="#titulo" class="to-start">início</a>
+    </article>
+</section>
+<section id="fireworks">
+    <article>
+        <h3>Fireworks</h3>
+        <img src="img/fireworks_adobe.png" alt="fireworks_adobe" width="256px">
+        <h4>O que é?</h4>
+        <p>O Fireworks é um editor de imagens desenvolvido pela Macromedia, posteriormente adquirido pela
+            Adobe. Suas funcionalidades focam a publicação gráfica na Internet, por isso inclui suporte a GIF
+            animado, PNG e imagens fatiadas, além de possuir ótima compressão de imagens. A partir da versão
+            MX, ganhou integração com outros produtos da mesma linha, Dreamweaver, Flash e Freehand.</p>
+        <h4>Sobre o curso:</h4>
+        <p>O curso ensina a trabalhar com as mais importantes ferramentas de trabalho com imagens, vetores,
+            textos, botões e camadas no Fireworks 8.</p>
+        <p>Aborda também o trabalho com alguns filtros, criação e logomarcas e tratamento de imagens. Além disso,
+            destina um capítulo em especial para a criação de websites no Fireworks 8.</p>
+        <a href="#titulo" class="to-start">início</a>
+    </article>
+</section>
+<footer>
+    &copy All Right Reserved 2023
+</footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Stream</title>
+    <style>
+        :root {
+            --size-ico: 30px;
+            --imagem-w: 256px;
+        }
+
+        header {
+            padding-left: 2em;
+        }
+
+        header h1 {
+            display: inline-block;
+            width: fit-content;
+            font-family: "Trebuchet MS", "Helvetica", sans-serif;
+        }
+
+        header .mytube {
+            position: relative;
+            display: inline-block;
+            width: fit-content;
+            color: #00ffba;
+            text-align: left;
+            border-radius: 2em;
+            padding: 0.2em;
+            background: #4d00f3;
+            z-index: 0;
+        }
+
+        header .mytube::after {
+            position: absolute;
+            top: calc(40% - var(--size-ico) / 2);
+            left: calc(20% + var(--size-ico));
+            content: '';
+            width: var(--size-ico);
+            height: var(--size-ico);
+            border-right: 10px solid #00ffba;
+            border-bottom: 10px solid #00ffba;
+            rotate: -45deg;
+            z-index: 1;
+        }
+
+        header > a {
+            text-decoration: none;
+            color: #005599;
+        }
+
+        img {
+            width: var(--imagem-w);
+            /*height: fit-content;*/
+            filter: drop-shadow(2px -3px 5px black);
+        }
+
+        #my-img img {
+            display: grid;
+            gap: 10px;
+
+        }
+    </style>
+</head>
+<body>
+<header>
+   <a class="#" href="https://www.youtube.com"><h1>My<span class="mytube">tube</span></h1></a>
+</header>
+<section id="my-img">
+    <div>
+        <img src="img/scam-sites.png" alt="Uma imagem qualquer" width="400" height="256">
+        <img src="img/scam-sites.png" alt="Uma imagem qualquer" width="400" height="256">
+        <img src="img/scam-sites.png" alt="Uma imagem qualquer" width="400" height="256">
+    </div>
+</section>
+<section id="my-music">
+    <audio src="https://65381g.ha.azioncdn.net/0/c/4/1/lovely-hatred-loading-9e7b9308.mp3" controls loop></audio>
+    <audio src="https://65381g.ha.azioncdn.net/0/c/4/1/lovely-hatred-loading-9e7b9308.mp3" controls loop></audio>
+    <audio src="https://65381g.ha.azioncdn.net/0/c/4/1/lovely-hatred-loading-9e7b9308.mp3" controls loop></audio>
+    <audio src="https://65381g.ha.azioncdn.net/0/c/4/1/lovely-hatred-loading-9e7b9308.mp3" controls loop></audio>
+    <audio src="https://65381g.ha.azioncdn.net/0/c/4/1/lovely-hatred-loading-9e7b9308.mp3" controls loop></audio>
+
+</section>
+<section id="my-vid">
+    <video width="400" height="256" src=""
+           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
+           controls>Deu ruim!
+    </video>
+    <video width="400" height="256" src=""
+           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
+           controls>Deu ruim!
+    </video>
+    <video width="400" height="256" src=""
+           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
+           controls>Deu ruim!
+    </video>
+    <video width="400" height="256" src=""
+           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
+           controls>Deu ruim!
+    </video>
+    <video width="400" height="256" src=""
+           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
+           controls>Deu ruim!
+    </video>
+    <video width="400" height="256" src=""
+           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
+           controls>Deu ruim!
+    </video>
+
+</section>
+<section id="you-tube">
+    <object data="https://www.youtube.com/embed/DqVGfSXYWMg?list=RDDqVGfSXYWMg" width="400" height="256"></object>
+    <object data="https://www.youtube.com/embed/DqVGfSXYWMg?list=RDDqVGfSXYWMg" width="400" height="256"></object>
+    <object data="https://www.youtube.com/embed/DqVGfSXYWMg?list=RDDqVGfSXYWMg" width="400" height="256"></object>
+    <object data="https://www.youtube.com/embed/DqVGfSXYWMg?list=RDDqVGfSXYWMg" width="400" height="256"></object>
+    <object data="https://www.youtube.com/embed/DqVGfSXYWMg?list=RDDqVGfSXYWMg" width="400" height="256"></object>
+</section>
+</body>
+</html>
