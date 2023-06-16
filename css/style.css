@@ -1,0 +1,131 @@
+body {
+    animation: body 10s infinite ease-in-out;
+}
+
+#computer {
+    overflow: hidden;
+    background: #161616;
+    border-radius: 1ch;
+    width: clamp(100px, 50%, 500px);
+    position: absolute;
+    top: 10%;
+    left: calc(50% - 250px);
+}
+
+.btn {
+
+}
+
+#pc-dir {
+    padding: 8px;
+    margin: 0;
+    text-align: center;
+    color: aliceblue;
+}
+
+ul {
+    margin: 0;
+    padding-left: 20px;
+    background: #000;
+    list-style-type: "~$";
+    color: red;
+    text-indent: 1ch;
+}
+
+a {
+    text-decoration: none;
+    color: greenyellow;
+}
+
+.content_1 {
+    border: 2px solid blue;
+    background: lightblue;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 350px;
+    left: 0;
+    z-index: 1;
+    animation: 2s teste1 infinite cubic-bezier(0.6, 0.5, 0.9, 0) alternate;
+}
+
+.content_2 {
+    border: 2px solid red;
+    background-color: lightcoral;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 500px;
+    left: 0;
+    z-index: 2;
+    animation: 2s teste2 infinite ease-in alternate;
+
+}
+
+.content_3 {
+    border: 2px solid green;
+    background-color: limegreen;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 400px;
+    z-index: 3;
+    animation: 0.7s teste3 infinite ease-out alternate;
+
+}
+
+.content_1 a {
+    text-decoration: none;
+    color: blue;
+}
+
+.content_2 a {
+    text-decoration: none;
+    color: darkred;
+}
+
+.content_3 a {
+    text-decoration: none;
+    color: darkgreen;
+}
+
+
+/*Animations*/
+@keyframes test1 {
+    100% {
+        transform: translate(400px);
+    }
+}
+
+
+@keyframes test2 {
+    100% {
+        transform: translateX(calc(400px));
+    }
+}
+
+
+@keyframes test3 {
+    100% {
+        transform: translateY(-200px);
+    }
+}
+
+@keyframes body {
+    25% {
+        background-color: aqua;
+    }
+
+    50% {
+        background-color: blueviolet;
+    }
+
+    75% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: white;
+    }
+}
