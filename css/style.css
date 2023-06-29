@@ -12,10 +12,6 @@ body {
     left: calc(50% - 250px);
 }
 
-.btn {
-
-}
-
 #pc-dir {
     padding: 8px;
     margin: 0;
@@ -46,7 +42,7 @@ a {
     top: 350px;
     left: 0;
     z-index: 1;
-    animation: 2s teste1 infinite cubic-bezier(0.6, 0.5, 0.9, 0) alternate;
+    animation: 2s test1 infinite cubic-bezier(0.6, 0.5, 0.9, 0) alternate;
 }
 
 .content_2 {
@@ -58,7 +54,7 @@ a {
     top: 500px;
     left: 0;
     z-index: 2;
-    animation: 2s teste2 infinite ease-in alternate;
+    animation: 2s test2 infinite ease-in alternate;
 
 }
 
@@ -69,9 +65,9 @@ a {
     height: 100px;
     position: absolute;
     bottom: 0;
-    left: 400px;
+    left: calc(50% - 50px);
     z-index: 3;
-    animation: 0.7s teste3 infinite ease-out alternate;
+    animation: 1s test3 infinite ease-out alternate;
 
 }
 
@@ -90,29 +86,38 @@ a {
     color: darkgreen;
 }
 
+.content_1, .content_2, .content_3 {
+    border-radius: 50em;
+    text-align: center;
+    line-height: 100px;
+}
+
 
 /*Animations*/
 @keyframes test1 {
-    100% {
+    to {
         transform: translate(400px);
     }
 }
 
 
 @keyframes test2 {
-    100% {
-        transform: translateX(calc(400px));
+    to {
+        transform: translateX(400px);
     }
 }
 
 
 @keyframes test3 {
-    100% {
+    to {
         transform: translateY(-200px);
     }
 }
 
 @keyframes body {
+    5% {
+        background-color: chartreuse;
+    }
     25% {
         background-color: aqua;
     }
@@ -125,7 +130,7 @@ a {
         background-color: black;
     }
 
-    100% {
+    95% {
         background-color: white;
     }
 }

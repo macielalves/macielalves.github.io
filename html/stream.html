@@ -2,118 +2,104 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <title>Stream</title>
+    <title>Lil Whind</title>
     <style>
-        :root {
-            --size-ico: 30px;
-            --imagem-w: 256px;
+        body {
+            /*background: #fff; no lugar do parametro bgcolor="#fff"*/
+            background: #fff;
+            box-sizing: border-box;
         }
 
-        header {
-            padding-left: 2em;
+        #container {
+            width: 1080px;
+            margin: 0 auto;
         }
 
-        header h1 {
-            display: inline-block;
-            width: fit-content;
+        figure {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        figcaption {
             font-family: "Trebuchet MS", "Helvetica", sans-serif;
+            font-weight: bold;
+            text-shadow: 2px 3px 2px #000;
+            color: #fde501;
+            font-size: 3em;
+            margin-left: 1em;
         }
 
-        header .mytube {
-            position: relative;
-            display: inline-block;
-            width: fit-content;
-            color: #00ffba;
-            text-align: left;
-            border-radius: 2em;
-            padding: 0.2em;
-            background: #4d00f3;
-            z-index: 0;
+        .section {
+            width: 1000px;
+            margin: 0 auto;
         }
 
-        header .mytube::after {
-            position: absolute;
-            top: calc(40% - var(--size-ico) / 2);
-            left: calc(20% + var(--size-ico));
-            content: '';
-            width: var(--size-ico);
-            height: var(--size-ico);
-            border-right: 10px solid #00ffba;
-            border-bottom: 10px solid #00ffba;
-            rotate: -45deg;
-            z-index: 1;
+        .videos {
+            width: 100%;
+            margin-left: 2.5em;
         }
 
-        header > a {
-            text-decoration: none;
-            color: #005599;
+        audio {
+            margin: 5px;
         }
 
-        img {
-            width: var(--imagem-w);
-            /*height: fit-content;*/
-            filter: drop-shadow(2px -3px 5px black);
+        object {
+            width: 350px;
+            height: 200px;
+            margin: 0.8em;
         }
 
-        #my-img img {
-            display: grid;
-            gap: 10px;
-
+        table {
+            width: 100%;
         }
+
     </style>
 </head>
 <body>
-<header>
-   <a class="#" href="https://www.youtube.com"><h1>My<span class="mytube">tube</span></h1></a>
-</header>
-<section id="my-img">
-    <div>
-        <img src="img/scam-sites.png" alt="Uma imagem qualquer" width="400" height="256">
-        <img src="img/scam-sites.png" alt="Uma imagem qualquer" width="400" height="256">
-        <img src="img/scam-sites.png" alt="Uma imagem qualquer" width="400" height="256">
+<div id="container">
+    <div class="profile">
+        <figure>
+            <img src="https://images.suamusica.com.br/hLoGhCBYiKSXAPOic_32kcvXiQY=/240x240/filters:format(webp)/2870094/2964977/cd_cover.jpg" alt="" width="190">
+            <figcaption>Lil Wind</figcaption>
+        </figure>
     </div>
-</section>
-<section id="my-music">
-    <audio src="https://65381g.ha.azioncdn.net/0/c/4/1/lovely-hatred-loading-9e7b9308.mp3" controls loop></audio>
-    <audio src="https://65381g.ha.azioncdn.net/0/c/4/1/lovely-hatred-loading-9e7b9308.mp3" controls loop></audio>
-    <audio src="https://65381g.ha.azioncdn.net/0/c/4/1/lovely-hatred-loading-9e7b9308.mp3" controls loop></audio>
-    <audio src="https://65381g.ha.azioncdn.net/0/c/4/1/lovely-hatred-loading-9e7b9308.mp3" controls loop></audio>
-    <audio src="https://65381g.ha.azioncdn.net/0/c/4/1/lovely-hatred-loading-9e7b9308.mp3" controls loop></audio>
-
-</section>
-<section id="my-vid">
-    <video width="400" height="256" src=""
-           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
-           controls>Deu ruim!
-    </video>
-    <video width="400" height="256" src=""
-           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
-           controls>Deu ruim!
-    </video>
-    <video width="400" height="256" src=""
-           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
-           controls>Deu ruim!
-    </video>
-    <video width="400" height="256" src=""
-           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
-           controls>Deu ruim!
-    </video>
-    <video width="400" height="256" src=""
-           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
-           controls>Deu ruim!
-    </video>
-    <video width="400" height="256" src=""
-           poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65wxT0dJAtY1tKiGbUvHiotKpktJ3DOrfuw&usqp=CAU"
-           controls>Deu ruim!
-    </video>
-
-</section>
-<section id="you-tube">
-    <object data="https://www.youtube.com/embed/DqVGfSXYWMg?list=RDDqVGfSXYWMg" width="400" height="256"></object>
-    <object data="https://www.youtube.com/embed/DqVGfSXYWMg?list=RDDqVGfSXYWMg" width="400" height="256"></object>
-    <object data="https://www.youtube.com/embed/DqVGfSXYWMg?list=RDDqVGfSXYWMg" width="400" height="256"></object>
-    <object data="https://www.youtube.com/embed/DqVGfSXYWMg?list=RDDqVGfSXYWMg" width="400" height="256"></object>
-    <object data="https://www.youtube.com/embed/DqVGfSXYWMg?list=RDDqVGfSXYWMg" width="400" height="256"></object>
-</section>
+    <hr color="#fde501">
+    <br>
+    <table>
+        <tr>
+            <td>
+                <div class="audio">
+                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
+                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
+                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
+                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
+                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
+                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
+                </div>
+            </td>
+            <td>
+                <div class="videos">
+                    <!--<video src=""></video>-->
+                    <object data="https://www.youtube.com/embed/dt8XlSv7d5g?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA" title="Tempo (Remix)" width="300px"></object>
+                    <object data="https://www.youtube.com/embed/qjVD3cX-Wqc?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA" title="Tempo (Remix)" width="300px"></object>
+                    <object data="https://www.youtube.com/embed/T34sBumoXK4?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA" title="Tempo (Remix)" width="300px"></object>
+                    <object data="https://www.youtube.com/embed/KE7Do_JxDOY?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA" title="Tempo (Remix)" width="300px"></object>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="section">
+    </div>
+    <ul>
+        <li>qq</li>
+        <li>qq</li>
+        <li>qq</li>
+    </ul>
+    <ul>
+        <li>qq</li>
+        <li>qq</li>
+        <li>qq</li>
+    </ul>
+</div>
 </body>
 </html>
