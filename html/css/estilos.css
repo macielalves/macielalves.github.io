@@ -11,35 +11,40 @@
 }
 
 body {
-    background: #fafafa;
+    background: #faf5f2;
 }
 
 header {
-    display: block;
-    flex-direction: column;
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
     background: #a8c5ff var(--image-bg-title-light) no-repeat;
     background-position: center 20%;
     background-size: cover;
+    background-attachment: fixed;
     height: 500px;
-    padding: 0;
 }
 
-#titulo h3 {
+header h3 {
     flex: 0 0 fit-content;
     /*text-align: center;*/
     font-family: "Trebuchet MS", "Helvetica", sans-serif;
     font-size: 3em;
+    padding: 25px 50px;
+    border-radius: 50px;
     color: #fff9f2;
-    background: #2f2f2f;
+    text-shadow: 3px 3px 3px #073d2b;
+    background: rgba(34, 119, 96, 0.55);
 }
 
+article {
+    width: 800px;
+    margin: 0 auto;
+}
 
-#titulo p {
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-family: "Helvetica Neue", sans-serif;
+article p {
+    color: #1f1d1d;
+    font: 1.2rem "Helvetica Neue", sans-serif;
 }
 
 img {
