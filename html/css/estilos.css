@@ -11,18 +11,27 @@
 }
 
 body {
-    background: #faf5f2;
+    background: #304f43;
+    color: #DDD;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background: #a8c5ff var(--image-bg-title-light) no-repeat;
-    background-position: center 20%;
+    background: #a8c5ff no-repeat;
+    background-image: var(--image-bg-title-light);
     background-size: cover;
     background-attachment: fixed;
     height: 500px;
+    transition: 2s all;
+    /*animation: 60s cidade infinite ease;*/
+}
+
+@keyframes cidade {
+    50% {
+        background-image: var(--image-bg-title-dark);
+    }
 }
 
 header h3 {
@@ -43,7 +52,8 @@ article {
 }
 
 article p {
-    color: #1f1d1d;
+    text-justify: auto;
+    color: #DfD;
     font: 1.2rem "Helvetica Neue", sans-serif;
 }
 

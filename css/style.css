@@ -1,18 +1,42 @@
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     animation: body 10s infinite ease-in-out;
+    box-sizing: border-box;
+    margin: 0;
 }
 
-#computer {
+#container {
+    display: flex;
+    place-items: center;
+    place-content: center;
+    /*width: 100%;*/
+    height: 100%;
+
+}
+
+div#computer {
+    flex: 0 0 512px;
     overflow: hidden;
     background: #161616;
-    border-radius: 1ch;
-    width: clamp(100px, 50%, 500px);
-    position: absolute;
-    top: 10%;
-    left: calc(50% - 250px);
+    border-radius: 10px;
 }
 
-#pc-dir {
+@media (max-width: 512px) {
+    div#computer {
+        flex: 1 0 fit-content;
+    }
+
+    a {
+        font-size: 1.5em;
+        line-height: 3rem;
+    }
+}
+
+#folder-dir {
     padding: 8px;
     margin: 0;
     text-align: center;
@@ -21,99 +45,35 @@ body {
 
 ul {
     margin: 0;
-    padding-left: 20px;
+    padding: 2px;
     background: #000;
-    list-style-type: "~$";
+    text-indent: 2px;
+}
+
+li::before {
+    content: '~$';
     color: red;
-    text-indent: 1ch;
+    margin-right: 4px;
 }
 
+li {
+    line-height: 1.4em;
+}
+
+/*== Links ==*/
 a {
-    text-decoration: none;
+    text-decoration: 2px none #8aff46;
+    color: #75c000;
+    transition: 200ms all;
+}
+
+a:hover {
+    text-decoration: 2px underline #8aff46;
     color: greenyellow;
+    font-size: 1.5em;
 }
 
-.content_1 {
-    border: 2px solid blue;
-    background: lightblue;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 350px;
-    left: 0;
-    z-index: 1;
-    animation: 2s test1 infinite cubic-bezier(0.6, 0.5, 0.9, 0) alternate;
-}
-
-.content_2 {
-    border: 2px solid red;
-    background-color: lightcoral;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 500px;
-    left: 0;
-    z-index: 2;
-    animation: 2s test2 infinite ease-in alternate;
-
-}
-
-.content_3 {
-    border: 2px solid green;
-    background-color: limegreen;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - 50px);
-    z-index: 3;
-    animation: 1s test3 infinite ease-out alternate;
-
-}
-
-.content_1 a {
-    text-decoration: none;
-    color: blue;
-}
-
-.content_2 a {
-    text-decoration: none;
-    color: darkred;
-}
-
-.content_3 a {
-    text-decoration: none;
-    color: darkgreen;
-}
-
-.content_1, .content_2, .content_3 {
-    border-radius: 50em;
-    text-align: center;
-    line-height: 100px;
-}
-
-
-/*Animations*/
-@keyframes test1 {
-    to {
-        transform: translate(400px);
-    }
-}
-
-
-@keyframes test2 {
-    to {
-        transform: translateX(400px);
-    }
-}
-
-
-@keyframes test3 {
-    to {
-        transform: translateY(-200px);
-    }
-}
-
+/*== Animation ==*/
 @keyframes body {
     5% {
         background-color: chartreuse;

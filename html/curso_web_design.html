@@ -4,21 +4,76 @@
     <meta charset="UTF-8">
     <title>Curso de Web Design</title>
     <style type="text/css">
+        body, html {
+            height: 100%;
+        }
+
         body {
-            background: #bea9ff url("https://ewebz.co.uk/wp-content/uploads/2022/09/Website-Design.gif") no-repeat center top;
+            background: #31273a;
+            font-family: "Trebuchet MS", "Helvetica", sans-serif;
+            margin: 0;
         }
 
-        li {
-            line-height: 2em;
-            margin-bottom: 20px;
+        /*= Cor de titulos =*/
+        h1, h3 {
+            color: #7b69ec;
         }
 
-        h1, h3 {color: #7b69ec;
+        h4 {
+            color: #323054;
+            font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+            font-weight: bold;
         }
-        h2, h4 {color: #4c408f;}
 
-        ul a {
+        #cabecalho {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            min-height: 100%;
+            /*background: red;*/
+        }
+
+        #cabecalho h1 {
+            font-size: 4rem;
+            animation: 3s rgb-h1 infinite ease;
+        }
+
+        #cabecalho h2 {
+            color: #6959cc;
+        }
+
+        #cabecalho ul {
             box-sizing: border-box;
+            background: #534893;
+            width: 300px;
+            border-radius: 20px 60px 50% 60px;
+            padding: 30px;
+        }
+
+        #cabecalho div#t-nav {
+            flex: 0 0 450px;
+        }
+
+        #cabecalho figure {
+            flex: 0 0 450px;
+        }
+
+        #cabecalho figure img {
+            width: 100%;
+            border-radius: 50%;
+            transition: all 300ms ease-out;
+            background-size: cover;
+        }
+
+        #cabecalho figure img:hover {
+            width: 100%;
+            /*border-radius: 20px;*/
+            transform: scale(0.9);
+        }
+
+
+        #cabecalho ul a {
             text-decoration: none;
             font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
             font-weight: bold;
@@ -28,8 +83,37 @@
             border-radius: 1em;
         }
 
-        ul a:hover {
-            background: #6253bd;
+        #cabecalho ul a:hover {
+            background: #6253bd linear-gradient(to top, #6253bd, #816dff);
+            text-shadow: 1px 1px black;
+        }
+
+        li {
+            line-height: 2em;
+            margin-bottom: 20px;
+        }
+
+        #icons-h {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            min-height: 400px;
+            background: black;
+        }
+
+        #icons-h span {
+            flex: 0 0 200px;
+        }
+
+        #icons-h img {
+            width: 200px;
+            filter: grayscale(1) opacity(0.4);
+            transition: all 300ms;
+        }
+
+        #icons-h img:hover {
+            filter: grayscale(0);
         }
 
         p {
@@ -39,10 +123,19 @@
             text-indent: 2.5em;
         }
 
-        #cabecalho {
-            width: 500px;
-            margin: 0 auto;
-            margin-bottom: 4.6in;
+        #conteudo {
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            place-content: space-evenly;
+            margin-top: 4em;
+            row-gap: 1rem;
+        }
+
+        #html, #dreamweaver, #flash, #fireworks {
+            box-sizing: border-box;
+            flex: 0 0 500px;
+            border-radius: 20px;
         }
 
         #conteudo div {
@@ -50,12 +143,14 @@
             min-width: 320px;
             max-width: 640px;
             padding: 10px 30px;
-            margin: 20px auto;
         }
 
         a[href="#cabecalho"] {
+            display: flex;
+            width: fit-content;
+            float: right;
             text-decoration: none;
-            font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+            font-family: "Trebuchet MS", "Helvetica", sans-serif;
             font-weight: bold;
             background: #7B68EE;
             color: whitesmoke;
@@ -63,39 +158,76 @@
             border-radius: 5px;
         }
 
+        a[href="#cabecalho"]:hover {
+            background-color: #5f51b9;
+            color: #d2d2d2;
+        }
+
         #conteudo figure {
             text-align: center;
         }
 
+
+        @keyframes rgb-h1 {
+            50% {
+                color: #cdc0ff
+            }
+        }
+
     </style>
 </head>
-<body>
+<body background="">
 <!--bgcolor="#eee"-->
 <!-- questão 4 -->
 <div id="cabecalho">
-    <h1 align="center">Cursos de Web Design</h1>
-    <h2>Conheça nossos cursos:</h2>
-    <ul type="none">
-        <li><a href="#html">HTML</a></li>
-        <li><a href="#dreamweaver">DreamWeaver</a></li>
-        <li><a href="#flash">Flash</a></li>
-        <li><a href="#fireworks">Fireworks</a></li>
-    </ul>
+    <div id="t-nav">
+        <h1 align="center">Cursos de Web Design</h1>
+        <h2>Conheça nossos cursos:</h2>
+        <ul type="none">
+            <li><a href="#html">HTML</a></li>
+            <li><a href="#dreamweaver">DreamWeaver</a></li>
+            <li><a href="#flash">Flash</a></li>
+            <li><a href="#fireworks">Fireworks</a></li>
+        </ul>
+    </div>
+    <figure>
+        <img src="https://ewebz.co.uk/wp-content/uploads/2022/09/Website-Design.gif" alt="Design web">
+        <figcaption></figcaption>
+    </figure>
 </div>
 
+<div id="icons-h">
+    <span><a href="#html">
+        <img src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-8.png"
+             alt="logo HTML5"
+             width="180"></a></span>
+    <span><a href="#dreamweaver"><img
+            src="https://seeklogo.com/images/A/adobe-dreamweaver-cc-logo-715C7C7988-seeklogo.com.png"
+            alt="adobe_dreamweaver" width="180"></a></span>
+    <span><a href="#flash"><img src="https://cdn1.iconfinder.com/data/icons/adobe-3/512/Flash.png" alt="adobe_flash"
+                                width="180"></a></span>
+    <span><a href="#fireworks"><img
+            src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Fireworks_CS6_Icon.png"
+            alt="fireworks_adobe" width="180"></a></span>
+</div>
 <div id="conteudo">
     <div id="html">
         <h3 align="center">HTML</h3>
         <hr color="grey">
         <h4>O que é?</h4>
         <figure>
-            <img src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-8.png" alt="logo HTML5" width="180">
+            <img src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-8.png" alt="logo HTML5"
+                 width="180">
         </figure>
-        <p><strong>HTML</strong> (acrônimo para a expressão inglesa HyperText Markup Language, que significa Linguagem de Marcação de Hipertexto) é uma linguagem de marcação utilizada para produzir páginas na Web. Documentos HTML podem ser interpretados por navegadores.</p>
+        <p><strong>HTML</strong> (acrônimo para a expressão inglesa <em><strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</em>, que significa Linguagem
+            de Marcação de Hipertexto) é uma linguagem de marcação utilizada para produzir páginas na Web. Documentos
+            HTML podem ser interpretados por navegadores.</p>
         <h4>Sobre o curso:</h4>
-        <p>Este curso ensina desde os conceitos básicos da linguagem HTML, até a criação de formulários para a Web, ideal para inciantes, o par quem quer um guia de consulta, também possui um Glossário com todas as palavras mais utillizadas na Internet.</p>
+        <p>Este curso ensina desde os conceitos básicos da linguagem HTML, até a criação de formulários para a Web,
+            ideal para inciantes, o par quem quer um guia de consulta, também possui um Glossário com todas as palavras
+            mais utillizadas na Internet.</p>
         <hr color="grey">
-        <div align="right"><a href="#cabecalho">Início</a></div>
+        <a href="#cabecalho">Início</a>
     </div>
     <br>
     <div id="dreamweaver">
@@ -103,15 +235,24 @@
         <hr color="grey">
         <h4>O que é?</h4>
         <figure>
-            <img src="https://seeklogo.com/images/A/adobe-dreamweaver-cc-logo-715C7C7988-seeklogo.com.png" alt="adobe_dreamweaver" width="180">
+            <img src="https://seeklogo.com/images/A/adobe-dreamweaver-cc-logo-715C7C7988-seeklogo.com.png"
+                 alt="adobe_dreamweaver" width="180">
         </figure>
-        <p>O <strong>Macromedia Dreamweaver</strong> é um software de criação para a web criada pela Macromedia (agora <strong>Adobe Systems</strong>), que está atualmente na versão CS3. Versões iniciais da aplicação serviam como um simples editor HTML WYSIWYG ("What You See Is What You Get", ou "O que você vê é o que você tem"), porém versões mais recentes incorporaram notável suporte para muitas outras tecnologias web tais como XHTML, CSS, JavaScript e vários scripts de servidor. Desde o final dos anos 90, o Dreamweaver vem tendo um sucesso crescente e hoje domina cerca de 80% do mercado de editores HTML.
+        <p>O <strong>Macromedia Dreamweaver</strong> é um software de criação para a web criada pela Macromedia (agora
+            <strong>Adobe Systems</strong>), que está atualmente na versão CS3. Versões iniciais da aplicação serviam
+            como um simples editor HTML WYSIWYG ("What You See Is What You Get", ou "O que você vê é o que você tem"),
+            porém versões mais recentes incorporaram notável suporte para muitas outras tecnologias web tais como XHTML,
+            CSS, JavaScript e vários scripts de servidor. Desde o final dos anos 90, o Dreamweaver vem tendo um sucesso
+            crescente e hoje domina cerca de 80% do mercado de editores HTML.
         </p>
         <h4>Sobre o curso:</h4>
-        <p>Torne-se um Web Designer, uma das profissões mais bem pagas da atualidade. Aprenda rapidamente e invista muito pouco com este treinamento interativo único. Neste curso você aprenderá a dominar o Dreamweaver CS3 o software mais usado para criação de sites de sucesso.</p>
-        <p>São dezenas de tutoriais ricamente ilustrados com imagens e gráficos explicativos e mais de 50 videoaulas em alta resolução, narradas em português de maneira clara e didática.</p>
+        <p>Torne-se um Web Designer, uma das profissões mais bem pagas da atualidade. Aprenda rapidamente e invista
+            muito pouco com este treinamento interativo único. Neste curso você aprenderá a dominar o Dreamweaver CS3 o
+            software mais usado para criação de sites de sucesso.</p>
+        <p>São dezenas de tutoriais ricamente ilustrados com imagens e gráficos explicativos e mais de 50 videoaulas em
+            alta resolução, narradas em português de maneira clara e didática.</p>
         <hr color="grey">
-        <div align="right"><a href="#cabecalho">Início</a></div>
+        <a href="#cabecalho">Início</a>
     </div>
     <br>
     <div id="flash">
@@ -121,13 +262,24 @@
         <figure>
             <img src="https://cdn1.iconfinder.com/data/icons/adobe-3/512/Flash.png" alt="adobe_flash" width="180">
         </figure>
-        <p><strong>Adobe Flash</strong> (antes: Macromedia Flash), ou simplesmente Flash, é um software primariamente de gráfico vetorial - apesar de suportar imagens bitmap e vídeos - utilizado geralmente para a criação de animações interativas que funcionam embutidas num navegador web. O produto era desenvolvido e comercializadopela Macromedia, empresa especializada em desenvolver programas que auxiliam o processo de criação de páginas web.</p>
-        <p>Em versões recentes (a partir da 5), a Macromedia expandiu a utilização do Flash para além de simples animações, mas também para uma ferramenta de desenvolvimento de aplicações completas. Isso graças aos avanços na linguagem ActionScript, que é a linguagem de programação utilizada em aplicações de arquivos flashes (.swf). A terceira versão desta linguagem acaba de ser lançada, tornando mais fácil e rápido criar aplicações para web, além de contar com recursos bem mais poderosos.</p>
+        <p><strong>Adobe Flash</strong> (antes: Macromedia Flash), ou simplesmente Flash, é um software primariamente de
+            gráfico vetorial - apesar de suportar imagens bitmap e vídeos - utilizado geralmente para a criação de
+            animações interativas que funcionam embutidas num navegador web. O produto era desenvolvido e
+            comercializadopela Macromedia, empresa especializada em desenvolver programas que auxiliam o processo de
+            criação de páginas web.</p>
+        <p>Em versões recentes (a partir da 5), a Macromedia expandiu a utilização do Flash para além de simples
+            animações, mas também para uma ferramenta de desenvolvimento de aplicações completas. Isso graças aos
+            avanços na linguagem ActionScript, que é a linguagem de programação utilizada em aplicações de arquivos
+            flashes (.swf). A terceira versão desta linguagem acaba de ser lançada, tornando mais fácil e rápido criar
+            aplicações para web, além de contar com recursos bem mais poderosos.</p>
         <h4>Sobre o curso:</h4>
-        <p>Este Curso de Flash visa fornecer todos os conhecimentos necessários para o desenvolvimento de sites, jogos e aplicações multimídia em ambiente Flash.</p>
-        <p>Neste curso de 21 aulas o aluno aprofundar as ferramentas de desenho e animação no Flash, dominar os elementos decisivos na construção de interfaces como as layers, cenas, símbolos e movie clips e programar ao mais alto nível no Flash com o ActionScript.</p>
+        <p>Este Curso de Flash visa fornecer todos os conhecimentos necessários para o desenvolvimento de sites, jogos e
+            aplicações multimídia em ambiente Flash.</p>
+        <p>Neste curso de 21 aulas o aluno aprofundar as ferramentas de desenho e animação no Flash, dominar os
+            elementos decisivos na construção de interfaces como as layers, cenas, símbolos e movie clips e programar ao
+            mais alto nível no Flash com o ActionScript.</p>
         <hr color="grey">
-        <div align="right"><a href="#cabecalho">Início</a></div>
+        <a href="#cabecalho">Início</a>
     </div>
     <br>
     <div id="fireworks">
@@ -135,22 +287,28 @@
         <hr color="grey">
         <h4>O que é?</h4>
         <figure>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Fireworks_CS6_Icon.png" alt="fireworks_adobe" width="180">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Fireworks_CS6_Icon.png"
+                 alt="fireworks_adobe" width="180">
         </figure>
-        <p>O <strong>Fireworks</strong> é um editor de imagens desenvolvido pela Macromedia, posteriormente adquirido pela Adobe. Suas funcionalidades focam a publicação gráfica na Internet, por isso inclui suporte a GIF animado, PNG e imagens fatiadas, além de possuir ótima compressão de imagens. A partir da versão MX, ganhou integração com outros produtos da mesma linha, Dreamweaver, Flash e Freehand.</p>
+        <p>O <strong>Fireworks</strong> é um editor de imagens desenvolvido pela Macromedia, posteriormente adquirido
+            pela Adobe. Suas funcionalidades focam a publicação gráfica na Internet, por isso inclui suporte a GIF
+            animado, PNG e imagens fatiadas, além de possuir ótima compressão de imagens. A partir da versão MX, ganhou
+            integração com outros produtos da mesma linha, Dreamweaver, Flash e Freehand.</p>
         <h4>Sobre o curso:</h4>
-        <p>O curso ensina a trabalhar com as mais importantes ferramentas de trabalho com imagens, vetores, textos, botões e camadas no Fireworks 8.</p>
-        <p>Aborda também o trabalho com alguns filtros, criação e logomarcas e tratamento de imagens. Além disso, destina um capítulo em especial para a criação de websites no Fireworks 8.</p>
+        <p>O curso ensina a trabalhar com as mais importantes ferramentas de trabalho com imagens, vetores, textos,
+            botões e camadas no Fireworks 8.</p>
+        <p>Aborda também o trabalho com alguns filtros, criação e logomarcas e tratamento de imagens. Além disso,
+            destina um capítulo em especial para a criação de websites no Fireworks 8.</p>
         <hr color="grey">
-        <div align="right"><a href="#cabecalho" target="_self">Início</a></div>
+        <a href="#cabecalho">Início</a>
     </div>
 </div>
 
 <div align="center">
-<br>
-    <font face="Verdana, sans-serif" color="#4c408f">&copy; All Right Reserved 2023</font>
     <br>
-<br>
+    <font face="Verdana, sans-serif" color="white">&copy; All Right Reserved 2023</font>
+    <br>
+    <br>
 </div>
 </body>
 </html>

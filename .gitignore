@@ -1,2 +1,9 @@
 ./html-teste
 ./pokedex-html
+./public
+./node
+./node_modules
+./server.js
+./package-lock.json
+./package.json
+./*.zip
