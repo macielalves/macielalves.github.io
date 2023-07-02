@@ -3,103 +3,55 @@
 <head>
     <meta charset="utf-8">
     <title>Lil Whind</title>
-    <style>
-        body {
-            /*background: #fff; no lugar do parametro bgcolor="#fff"*/
-            background: #fff;
-            box-sizing: border-box;
-        }
-
-        #container {
-            width: 1080px;
-            margin: 0 auto;
-        }
-
-        figure {
-            display: inline-flex;
-            align-items: center;
-        }
-
-        figcaption {
-            font-family: "Trebuchet MS", "Helvetica", sans-serif;
-            font-weight: bold;
-            text-shadow: 2px 3px 2px #000;
-            color: #fde501;
-            font-size: 3em;
-            margin-left: 1em;
-        }
-
-        .section {
-            width: 1000px;
-            margin: 0 auto;
-        }
-
-        .videos {
-            width: 100%;
-            margin-left: 2.5em;
-        }
-
-        audio {
-            margin: 5px;
-        }
-
-        object {
-            width: 350px;
-            height: 200px;
-            margin: 0.8em;
-        }
-
-        table {
-            width: 100%;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/stream.css">
 </head>
 <body>
 <div id="container">
-    <div class="profile">
-        <figure>
-            <img src="https://images.suamusica.com.br/hLoGhCBYiKSXAPOic_32kcvXiQY=/240x240/filters:format(webp)/2870094/2964977/cd_cover.jpg" alt="" width="190">
-            <figcaption>Lil Wind</figcaption>
-        </figure>
+    <div id="profile">
+        <label id="disco-box" ondblclick="bg_dark()">
+            <input type="checkbox" id="vigia">
+            <img src="https://images.suamusica.com.br/hLoGhCBYiKSXAPOic_32kcvXiQY=/240x240/filters:format(webp)/2870094/2964977/cd_cover.jpg"
+                 alt="Capa de perfil" width="190">
+        </label>
+        <h1>Lil Whind</h1>
     </div>
-    <hr color="#fde501">
-    <br>
-    <table>
-        <tr>
-            <td>
-                <div class="audio">
-                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
-                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
-                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
-                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
-                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
-                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio><br>
-                </div>
-            </td>
-            <td>
-                <div class="videos">
-                    <!--<video src=""></video>-->
-                    <object data="https://www.youtube.com/embed/dt8XlSv7d5g?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA" title="Tempo (Remix)" width="300px"></object>
-                    <object data="https://www.youtube.com/embed/qjVD3cX-Wqc?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA" title="Tempo (Remix)" width="300px"></object>
-                    <object data="https://www.youtube.com/embed/T34sBumoXK4?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA" title="Tempo (Remix)" width="300px"></object>
-                    <object data="https://www.youtube.com/embed/KE7Do_JxDOY?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA" title="Tempo (Remix)" width="300px"></object>
-                </div>
-            </td>
-        </tr>
-    </table>
-    <div class="section">
+
+    <hr color="#fde501" size="5">
+
+    <div id="audios">
+        <table border="1" bgcolor="#e6e6fa" width="60%" valign="right">
+            <tr>
+                <td colspan="1">
+                    <audio id="dj" src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio>
+                </td>
+                <th>Teste</th>
+            </tr>
+            <tr>
+                <td rowspan="1">
+                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio>
+                </td>
+                <th rowspan="1" colspan="1">Teste</th>
+            </tr>
+            <tr valign="middle">
+                <td>
+                    <audio src="https://pixeldrain.com/api/file/FxzcPZhZ" controls></audio>
+                </td>
+                <th>LilWhind feat Arthurzim - Mídia</th>
+            </tr>
+        </table>
     </div>
-    <ul>
-        <li>qq</li>
-        <li>qq</li>
-        <li>qq</li>
-    </ul>
-    <ul>
-        <li>qq</li>
-        <li>qq</li>
-        <li>qq</li>
-    </ul>
+    <div class="videos">
+        <!--<video src=""></video>-->
+        <object data="https://www.youtube.com/embed/dt8XlSv7d5g?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA"
+                title="Tempo (Remix)" width="300px"></object>
+        <object data="https://www.youtube.com/embed/qjVD3cX-Wqc?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA"
+                title="Tempo (Remix)" width="300px"></object>
+        <object data="https://www.youtube.com/embed/T34sBumoXK4?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA"
+                title="Tempo (Remix)" width="300px"></object>
+        <object data="https://www.youtube.com/embed/KE7Do_JxDOY?list=OLAK5uy_lXdNDrYny9iy2XznywzGL7Gx9o0qRd8ZA"
+                title="Tempo (Remix)" width="300px"></object>
+    </div>
 </div>
+<script src="js/stream.js"></script>
 </body>
 </html>
