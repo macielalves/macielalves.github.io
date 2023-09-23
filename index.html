@@ -1,30 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Páginas modelos</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/macielalves/McCalc/main/img/hello_py.gif">
     <!--    <link rel="stylesheet" href="/public/style.css" type="text/css" media="screen" title="no title" charset="utf-8">-->
 </head>
 <body vlink="#556b2f" alink="#006400">
-<div id="container">
-    <div id="computer">
-    <h5 id="folder-dir">~/html/</h5>
-    <ul>
-        <li><a href="html/dezcoisas.html">dezcoizas</a></li>
-        <li><a href="html/imagine.html">imagine</a></li>
-        <li><a href="html/bovespa.html">bovespa</a></li>
-        <li><a href="html/curso_web_design.html">curso_web_design</a></li>
-        <li><a href="html/stream.html">stream</a></li>
-        <li><a href="html/curriculo.html">curriculo</a></li>
-        <li><a href="html/info_piaui.html">info_piaui</a></li>
-        <li><a href="html/tour_html.html">tour_html</a></li>
-        <li><a href="html/instituto-delta/index.html">instituto delta</a></li>
-        <li><a href="html/e-Compras/index.html">e-compras</a></li>
-    </ul>
+<div id="container_main">
+    <div class="top_bar folder_dir">
+        <span>macielalves.github.io/</span>
+        <span class="btn-span">
+            <span class="btn_close" onclick="close_page()"></span>
+            <span class="btn_min" onclick="minimize()"></span>
+            <span class="btn_max" onclick="max_screen() "></span>
+        </span>
+    </div>
+    <div id="janela">
+        <ul>
+            <li><a title="Página central" href="https://macielalves.github.io/" target="_blank">macielalves.github.io</a></li>
+            <li><a title="Página de acesso ao bot_kame" href="https://botkame.macielalves.repl.co/" target="_blank">bot_kame</a></li>
+            <li><a title="Perfil proficional" href="https://macielalves.w3spaces.com/" target="_blank">Curriculo</a></li>
+            <li><a title="Mirror fashion" href="mirror fashion.html" target="_blank">mirror_fashion</a></li>
+            <li><a href="dezcoisas.html" target="_blank">dezcoizas</a></li>
+            <li><a href="imagine.html" target="_blank">imagine</a></li>
+            <li><a href="bovespa.html" target="_blank">bovespa</a></li>
+            <li><a href="curso_web_design.html" target="_blank">curso_web_design</a></li>
+            <li><a href="stream.html" target="_blank">stream</a></li>
+            <li><a href="info_piaui.html" target="_blank">info_piaui</a></li>
+            <li><a href="tour_html.html" target="_blank">tour_html</a></li>
+            <li><a href="instituto-delta/index.html" target="_blank">instituto delta</a></li>
+            <li><a href="e-Compras/index.html" target="_blank">e-compras</a></li>
+        </ul>
+    </div>
 </div>
-</div>
+<script src="js/scripts.js"></script>
 </body>
 </html>

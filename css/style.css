@@ -1,62 +1,144 @@
+/* Css da Main page */
 body, html {
     width: 100%;
     height: 100%;
 }
 
 body {
-    animation: body 10s infinite ease-in-out;
+    animation: body 20s infinite alternate ease-in;
     box-sizing: border-box;
     margin: 0;
 }
 
-#container {
+#container_main {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+div#janela {
+    width: 100%;
+    height: fit-content;
+    background: #161616;
+    font-size: 1.5em;
+    font-family: 'Consolas', sans-serif;
+    padding-top: 20px;
+    max-height: 500px;
+    transition: 100ms;
+    overflow-y: hidden;
+}
+
+.janela_full#container_main {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+.janela_full > #janela {
+    height: 100%;
+    max-height: 100%;
+}
+
+.janela_full > .top_bar {
+}
+
+.janela_min#container_main {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: max-content;
+    height: 100%;
+    max-width: 100%;
+}
+.janela_min > #janela {
+    height: 50px;
+    max-height: 100%;
+}
+
+.janela_min > .top_bar {
+    width: 340px;
+    place-items: flex-end !important;
+    place-content: center !important;
+}
+
+div#janela:hover {
+    overflow-y: scroll;
+}
+
+.top_bar {
+    position: relative;
     display: flex;
     place-items: center;
     place-content: center;
-    /*width: 100%;*/
-    height: 100%;
-
+    width: 100%;
+    height: 30px;
+    background-color: darkgray;
+    background-image: linear-gradient(to top, #707070 30%, #c4c4c4);
+    border-radius: 10px 10px 0 0;
 }
 
-div#computer {
-    flex: 0 0 512px;
-    overflow: hidden;
-    background: #161616;
-    border-radius: 10px;
-}
-
-@media (max-width: 512px) {
-    div#computer {
-        flex: 1 0 fit-content;
-    }
-
-    a {
-        font-size: 1.5em;
-        line-height: 3rem;
-    }
-}
-
-#folder-dir {
-    padding: 8px;
-    margin: 0;
+.folder_dir {
     text-align: center;
-    color: aliceblue;
+    color: white;
+    font-family: 'consolas', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.btn-span {
+    margin-top: 5px;
+    position: absolute;
+    left: 10px;
+    cursor: default;
+}
+
+.btn-span>span {
+    display: inline-block;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    cursor: inherit;
+}
+
+.btn_close {
+    background-color: #d40b0b;
+}
+
+.btn_max {
+    background-color: #07cf03;
+}
+
+.btn_min {
+    background-color: #d9cf0b;
+}
+
+.btn_close:hover {
+    background-color: red;
+}
+
+.btn_max:hover {
+    background-color: #04ff00;
+}
+
+.btn_min:hover {
+    background-color: #fff200;
 }
 
 ul {
+    list-style-type: none;
     margin: 0;
-    padding: 2px;
-    background: #000;
-    text-indent: 2px;
+    padding-left: 5px;
 }
 
 li::before {
     content: '~$';
+    font-weight: bold;
     color: red;
-    margin-right: 4px;
-}
-
-li {
+    margin-right: 6px;
     line-height: 1.4em;
 }
 
@@ -70,27 +152,39 @@ a {
 a:hover {
     text-decoration: 2px underline #8aff46;
     color: greenyellow;
-    font-size: 1.5em;
+}
+
+a:focus-visible {
+    animation: 1.5s pisca infinite ease reverse;
+}
+
+@media (max-width: 600px) {
+    #container_main {
+        width: 100%;
+    }
 }
 
 /*== Animation ==*/
 @keyframes body {
-    5% {
-        background-color: chartreuse;
-    }
-    25% {
-        background-color: aqua;
-    }
+    0% {background-color: #262626;}
+    10% {background-color: #9b0000}
+    20% {background-color: #ffe100}
+    30% {background-color: #62e417}
+    40% {background-color: #00f8cb}
+    50% {background-color: #00b3ff}
+    60% {background-color: #0000cb}
+    70% {background-color: #6812c3}
+    80% {background-color: #e607bd}
+    90% {background-color: #f6213d}
+    100% {background-color: #262626}
+}
 
-    50% {
-        background-color: blueviolet;
+@keyframes pisca {
+    from {color: #55ff00;
+        text-decoration: none;
+        outline-style: none;
     }
-
-    75% {
-        background-color: black;
-    }
-
-    95% {
-        background-color: white;
+    to {color: #ffffff;
+        outline-style: auto;
     }
 }
