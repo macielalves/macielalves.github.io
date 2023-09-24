@@ -61,8 +61,8 @@ div#janela {
 
 .janela_min > .top_bar {
     width: 340px;
-    place-items: flex-end !important;
-    place-content: center !important;
+    place-items: flex-end;
+    place-content: center;
 }
 
 div#janela:hover {
