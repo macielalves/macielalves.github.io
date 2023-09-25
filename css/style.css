@@ -29,11 +29,12 @@ div#janela {
     font-family: 'Consolas', sans-serif;
     padding-top: 20px;
     max-height: 500px;
-    transition: 100ms;
+    transition: all 150ms;
     overflow-y: hidden;
 }
 
 .janela_full#container_main {
+    transition: all 150ms;
     width: 100%;
     height: 100%;
     max-width: 100%;
@@ -81,12 +82,20 @@ div#janela:hover {
     border-radius: 10px 10px 0 0;
 }
 
+.top_bar:hover {
+    cursor: pointer;
+}
+
 .folder_dir {
     text-align: center;
     color: white;
     font-family: 'consolas', sans-serif;
     font-size: 1em;
     font-weight: bold;
+}
+
+.folder_dir::selection {
+    background-color: rgb(126, 19, 19);
 }
 
 .btn-span {

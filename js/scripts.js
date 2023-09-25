@@ -17,3 +17,12 @@ function minimize(){
         janela.classList.toggle('janela_full')
     }
 }
+/*
+*`${var}`
+*
+*
+*
+*/
+
+// const janela = document.getElementById()
+
