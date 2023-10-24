@@ -6,10 +6,10 @@ body {
     font-size: 1.2rem;
 }
 
-main {
+/* main {
     width: 70%;
     margin: 0 auto;
-}
+} */
 
 /* header {
     width: 9.78rem;
@@ -69,4 +69,35 @@ figcaption {
     line-height: 2.5rem;
 }
 
+nav {
+    background: red;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: block;
+    float: right;
+    background: red;
+    margin: 0 10px 0 0;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+#logo {
+    float: left;
+    width: 225px;
+    height: 85px;
+    background: gold no-repeat url("http://www.ideapedia.com.br/SiteRefTec/aplicacoes/mirror%20fashion/img/logo.png");
+}
+
+
+header {
+    background: rebeccapurple;
+    clear: both;
+    font-size: 18px;
+}
     
