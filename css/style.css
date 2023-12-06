@@ -34,7 +34,17 @@ div#janela {
   padding-top: var(--janela-padding-top);
   max-height: 500px;
   transition: all 150ms;
-  overflow-y: hidden;
+  overflow-y: scroll;
+}
+
+div#janela::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+}
+
+div#janela::-webkit-scrollbar-thumb {
+  background-color: #585858;
+  border-radius: 10px;
 }
 
 .janela_full#container_main {
