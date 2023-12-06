@@ -60,7 +60,7 @@ mydivs.forEach(elmnt => {
     const code = mdiv.code += 1;
     elmnt.classList.add(`item-${code}`);
     elmnt.childNodes[1].classList.add(`item-${code}-header`);
-    console.log("Child do Mydivs->", elmnt.childNodes[1])
+    // console.log("Child do Mydivs->", elmnt.childNodes[1])
     dragElement(elmnt, code);
 })
 
