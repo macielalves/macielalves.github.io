@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teresina Wiki</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header id="main-menu">
+    <div class="logo">
+      <a href="./">
+        <h1 id="title">Teresina Wiki</h1>
+      </a>
+      <div class="btn-menu-container hide-on-desktop" onclick="btnMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </div>
+    <nav class="navbar-top hide-on-mobile">
+      <ul type="square">
+        <!-- [/teresina-example] -->
+        <li class="item"><a href="./culinaria/" target="_self" rel="noopener noreferrer">Culinária</a>
+        </li>
+        <li class="item"><a href="./cultura/" target="_self" rel="noopener noreferrer">Cultura</a>
+        </li>
+        <li class="item"><a href="./esportes/" target="_self" rel="noopener noreferrer">Esportes</a>
+        </li>
+        <li class="item"><a href="./historia/" target="_self" rel="noopener noreferrer">História</a>
+        </li>
+        <li class="item"><a href="./turismo/" target="_self" rel="noopener noreferrer">Turismo</a>
+        </li>
+        <li class="item"><input type="button" id="current_user" value="Entrar/Cadastrar"></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="carousel">
+    <div class="progress-bar">
+      <div class="progress-bar__fill"></div>
+    </div>
+
+    <header class="main-post-wrapper">
+      <div class="slides">
+      </div>
+    </header>
+  </div>
+  <section aria-label="section main" id="main-content">
+    <aside class="left-content">
+      <input type="search" name="search" id="search" placeholder="Buscar">
+      <!-- <ul id="summary">
+        <li><span class="caret">Index (dev)</span>
+          <ul class="nested">
+            <li>subItem</li>
+            <li>subItem</li>
+            <li><span class="caret">Tea</span>
+              <ul class="nested">
+                <li>Black Tea</li>
+                <li>White Tea</li>
+                <li><span class="caret">Green Tea</span>
+                  <ul class="nested">
+                    <li>Sencha</li>
+                    <li>Gyokuro</li>
+                    <li>Matcha</li>
+                    <li>Pi Lo Chun</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul> -->
+    </aside>
+    <main>
+      <article class="article-main">
+        <section>
+          <h2>O que é Teresina Wiki</h2>
+          <p><strong>Teresina Wiki</strong> é um site exemplo.</p>
+          <p><sub>Para mais informações visite a página <a href="./sobre/nos/" target="_blank">sobre nós</a>.</sub></p>
+          <br>
+        </section>
+        <section>
+          <h2 id="curiosidades">Curiosidades Sobre Teresina</h2>
+          <p>
+            <strong>Teresina</strong> é um município brasileiro, capital do estado do Piauí e a única capital da
+            Região
+            Nordeste que não se localiza no litoral, distando 343 km do Oceano Atlântico. Sua população, conforme o
+            Censo Demográfico do Brasil de 2022, é de 866.300 habitantes, é a cidade mais populosa do Piauí. Está
+            conurbada com a cidade maranhense de Timon, formando assim a Região Integrada de Desenvolvimento da
+            Grande
+            Teresina, que aglomera cerca de 1.228.672 habitantes, sendo a segunda RIDE mais populosa de todo o
+            Brasil,
+            atrás apenas de Brasília. Teresina é a 19ª maior cidade do Brasil e a 16ª maior capital de estado, sendo
+            a
+            6ª capital mais populosa e a 7ª capital mais rica do Nordeste.
+          </p>
+        </section>
+      </article>
+    </main>
+  </section>
+  <footer>
+    <div class="footer-content">
+      <div>
+
+      </div>
+      <div>
+        <h3>Sobre</h3>
+        <ul>
+          <li><a href="">Contribuir</a></li>
+          <li><a href="./sobre/">Desenvolvedores</a></li>
+          <li><a href="">Tresina Wiki</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contato</h2>
+          <ul>
+            <li><a href="">Suporte</a></li>
+            <li><a href="">Fazer Reclamação</a></li>
+          </ul>
+      </div>
+      <div>
+        <h3>Increser-se</h2>
+          <form action="" method="post">
+            <input type="email" name="email" id="input-email" autocomplete="email">
+            <input type="submit" value="Enviar">
+          </form>
+      </div>
+    </div>
+    <h3>Exemplo&copy;2023</h3>
+  </footer>
+  <script type="module" src="./js/mcode.js"></script>
+  <script src="./js/search.js"></script>
+  <script src="./js/script.js"></script>
+  <script>
+    let summaryCaretToggler = document.getElementsByClassName("caret");
+    let i;
+
+    for (i = 0; i < summaryCaretToggler.length; i++) {
+      summaryCaretToggler[i].addEventListener("click", function () {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");
+      });
+    }
+  </script>
+</body>
+
+</html>
