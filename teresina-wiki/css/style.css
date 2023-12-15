@@ -602,4 +602,8 @@ footer {
       text-indent: 2rem;
     }
   }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
 }
