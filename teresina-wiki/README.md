@@ -17,7 +17,7 @@
 - Após, execute o seguinte comando para baixar somente a pasta `teresina-wiki`:
 
   ```shell
-  gir checkout HEAD teresina-wiki
+  git checkout HEAD teresina-wiki
   ```
 
 - Navegue até a subpasta e abra o VsCode nela:
