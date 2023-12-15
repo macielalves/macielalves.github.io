@@ -6,35 +6,33 @@
 
 body,
 html {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 body {
   animation: body 20s infinite alternate ease-in;
   box-sizing: border-box;
   margin: 0;
+  overflow: hidden;
 }
 
 #container_main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: sticky;
+  top: 8%;
+  left: 12%;
   width: 90%;
   max-width: 1024px;
 }
 
 div#janela {
-  width: 100%;
-  height: fit-content;
   background: #161616;
   font-size: 1.5em;
   font-family: "Consolas", sans-serif;
   padding-top: var(--janela-padding-top);
   max-height: 500px;
   transition: all 150ms;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 div#janela::-webkit-scrollbar {
@@ -172,25 +170,46 @@ li::before {
 }
 
 /*== Links ==*/
-a {
+li a,
+input#prompt {
   text-decoration: 2px none #8aff46;
   color: #75c000;
   transition: 200ms all;
 }
 
-a:hover {
+li a:hover {
   text-decoration: 2px underline #8aff46;
   color: greenyellow;
 }
 
-a:focus-visible {
+li a:focus-visible {
   animation: 1.5s pisca infinite ease reverse;
 }
 
 @media (max-width: 600px) {
   #container_main {
+    position: sticky;
+    top: 50%;
+    right: 0;
     width: 100%;
+    height: 100%;
   }
+
+  div#janela {
+    height: 100%;
+    max-height: 100%;
+  }
+}
+
+li input[type="search"]#prompt {
+  display: inline;
+  cursor: text;
+  caret-color: #eee;
+  background: transparent;
+  outline: transparent;
+  font-size: inherit;
+  border: none;
+  width: 96%;
 }
 
 /*== Animation ==*/
