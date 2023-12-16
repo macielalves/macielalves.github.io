@@ -438,11 +438,10 @@ footer {
   border-top: 5px solid #e95d00;
   background: #111;
   color: white;
-  & > h3 {
-    text-align: center;
-    color: inherit;
-    background: #1b1b1b;
-    padding: 0.5rem;
+  & div h3 {
+    width: fit-content;
+    border-bottom: 3px solid #7a7a7a46;
+    margin-bottom: 10px;
   }
 
   & .footer-content {
@@ -602,8 +601,11 @@ footer {
       text-indent: 2rem;
     }
   }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
+
+  footer {
+    & .footer-content {
+      grid-template-columns: 1fr;
+      row-gap: 10px;
+    }
   }
 }
