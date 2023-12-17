@@ -31,3 +31,9 @@
 .perfil-dev__right {
   padding: 1rem;
 }
+
+@media only screen and (max-width: 767px) {
+  #disqus_thread {
+    padding: 20px;
+  }
+}
