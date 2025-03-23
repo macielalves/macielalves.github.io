@@ -1,0 +1,44 @@
+body {
+  background: #1f1d1d;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+#cards {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+ul li {
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+
+ul li a {
+  min-width: 200px;
+  height: 350px;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  background: blue;
+  color: whitesmoke;
+  text-decoration: none;
+  font-family: monospace, sans-serif;
+  font-weight: bold;
+  border-radius: 30px;
+}
+
+.card:hover {
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    hsl(white / 1),
+    rgba(255, 255, 255, 0.12)
+  );
+  color: white;
+  /* background: -webkit-radial-gradient(darkblue, blue),
+    radial-gradient(darkblue, blue); */
+}

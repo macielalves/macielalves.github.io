@@ -1,0 +1,43 @@
+[data-draggable="true"] {
+  user-select: none;
+  touch-action: none;
+}
+
+.dragging {
+  opacity: 0.95;
+  cursor: grabbing !important;
+}
+
+.dragging * {
+  cursor: grabbing !important;
+}
+
+/* Estilo durante o arrasto */
+.window.dragging {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  opacity: 0.95;
+  cursor: grabbing !important;
+  transition: none !important;
+  user-select: none;
+}
+
+.window.dragging .window-header {
+  cursor: grabbing;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Garante que o conteúdo não interfere no arrasto */
+.window-content {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.window-header {
+  position: relative;
+  z-index: 2;
+}
+
+.window-header:active {
+  cursor: grabbing;
+}

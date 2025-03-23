@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Alo Mundo !!!</title>
+</head>
+<body>
+Alo Mundo !!! <br/>
+<hr/>
+<strong id="nomeFormatado">Seu nome</strong><br/><br/>
+<input type="text" id="nomeInput" placeholder="Digite seu nome">
+<button onclick="mostrarNome()">Mostrar Nome</button>
+
+<script>
+    function mostrarNome() {
+        let nome = document.getElementById("nomeInput").value;
+        let nomeElemento = document.getElementById("nomeFormatado");
+        nomeElemento.textContent = nome;
+    }
+</script>
+</body>
+</html>

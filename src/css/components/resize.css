@@ -1,0 +1,54 @@
+/* Estilos para as alças de resize */
+.resize-handle {
+  position: absolute;
+  background: transparent;
+  z-index: 2;
+}
+
+/* Alças das bordas */
+.resize-n, .resize-s {
+  left: 4px;
+  right: 4px;
+  height: 6px;
+}
+
+.resize-e, .resize-w {
+  top: 4px;
+  bottom: 4px;
+  width: 6px;
+}
+
+.resize-n { top: 0; cursor: n-resize; }
+.resize-s { bottom: 0; cursor: s-resize; }
+.resize-e { right: 0; cursor: e-resize; }
+.resize-w { left: 0; cursor: w-resize; }
+
+/* Alças dos cantos */
+.resize-ne, .resize-nw, .resize-se, .resize-sw {
+  width: 8px;
+  height: 8px;
+}
+
+.resize-ne { top: 0; right: 0; cursor: ne-resize; }
+.resize-se { bottom: 0; right: 0; cursor: se-resize; }
+.resize-sw { bottom: 0; left: 0; cursor: sw-resize; }
+.resize-nw { top: 0; left: 0; cursor: nw-resize; }
+
+/* Mostrar alças apenas no hover */
+.resize-handle {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.window:hover .resize-handle {
+  opacity: 1;
+}
+
+/* Feedback visual das alças no hover */
+.resize-handle:hover {
+  background: rgba(0, 120, 255, 0.2);
+}
+
+.resizing {
+  transition: none !important;
+}

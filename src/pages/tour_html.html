@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Práticas - HTML</title>
+    <link rel="stylesheet" href="css/tour-html.css" />
+    <script>
+      const cards = Array.from(document.querySelectorAll(".card"));
+      const cardsContainer = document.getElementById("#cards");
+
+      cardsContainer.addEventListener("mousemove", (e) => {
+        for (const card of cards) {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          card.style.setProperty("--mouse-x", `${x}px`);
+          card.style.setProperty("--mouse-y", `${y}px`);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!--[questão 08]-->
+    <ul id="cards">
+      <li><a class="card" href="praticas/pratica00.html">Ola mundo</a></li>
+      <li><a class="card" href="praticas/pratica01.html">Dados Pessoais</a></li>
+      <li><a class="card" href="praticas/pratica02.html">Exame de vista</a></li>
+      <li>
+        <a class="card" href="praticas/pratica03.html"
+          >Dicionário de informática</a
+        >
+      </li>
+      <li>
+        <a class="card" href="praticas/pratica04.html">Novo Exame de vista</a>
+      </li>
+      <li>
+        <a class="card" href="praticas/pratica05.html"
+          >Dicionário de informática 1.0
+        </a>
+      </li>
+      <li><a class="card" href="praticas/pratica06.html">Enquete</a></li>
+      <li><a class="card" href="praticas/pratica07.html">Logo Google</a></li>
+      <li><a class="card" href="praticas/pratica08.html">Pizza</a></li>
+      <li><a class="card" href="praticas/pratica09.html">Nova Pizza</a></li>
+      <li>
+        <a class="card" href="praticas/pratica10.html"
+          >Dicionário de informática 2.0</a
+        >
+      </li>
+      <li><a class="card" href="praticas/pratica11.html">Pizza 2.0</a></li>
+    </ul>
+  </body>
+</html>

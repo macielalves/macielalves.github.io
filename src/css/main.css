@@ -1,0 +1,77 @@
+/* Importa todos os componentes CSS */
+@import 'components/window.css';
+@import 'components/drag.css';
+@import 'components/resize.css';
+@import 'components/collision.css';
+@import 'components/calc.css';
+@import 'components/sub-browser.css';
+
+/* Estilos globais */
+:root {
+  /* Cores do sistema */
+  --color-dark: #262626;
+  --color-red: #9b0000;
+  --color-yellow: #ffe100;
+  --color-green: #62e417;
+  --color-cyan: #00f8cb;
+  --color-blue-light: #00b3ff;
+  --color-blue-dark: #0000cb;
+  --color-purple: #6812c3;
+  --color-pink: #e607bd;
+  --color-coral: #f6213d;
+
+  /* Variáveis da janela */
+  --window-border-radius: 8px;
+  --window-min-width: 300px;
+  --window-min-height: 200px;
+  --window-header-height: 32px;
+  --window-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  /* Cores do header */
+  --header-bg: #555;
+  --header-text-color: #e0e0e0;
+  --header-button-bg: #777;
+  --header-button-hover: #999;
+  --header-button-active: #555;
+  --header-button-text-color: #fff;
+
+  /* Variáveis de z-index */
+  --z-index-desktop: 1;
+  --z-index-window: 10;
+  --z-index-active-window: 11;
+
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Animação de fundo */
+@keyframes rainbow-background {
+  0%, 100% { background-color: var(--color-dark); }
+  10% { background-color: var(--color-red); }
+  20% { background-color: var(--color-yellow); }
+  30% { background-color: var(--color-green); }
+  40% { background-color: var(--color-cyan); }
+  50% { background-color: var(--color-blue-light); }
+  60% { background-color: var(--color-blue-dark); }
+  70% { background-color: var(--color-purple); }
+  80% { background-color: var(--color-pink); }
+  90% { background-color: var(--color-coral); }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  animation: rainbow-background 10s linear infinite;
+  background-image: url('https://www.wallpaperhub.app/_next/image?url=https%3A%2F%2Fcdn.wallpaperhub.app%2Fcloudcache%2Fb%2Fd%2F7%2F6%2F4%2Fb%2Fbd764bb25d49a05105060185774ba14cd2c846f7.jpg&w=4500&q=100');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

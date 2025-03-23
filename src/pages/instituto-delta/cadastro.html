@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Delta - Formulário</title>
+    <style>
+        body, html {
+            width: 99.2%;
+            height: 99.2%;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header, nav, article, footer {
+            box-sizing: border-box;
+            flex: 0 0 100%;
+            border: 1px solid grey;
+            border-radius: 3px;
+            margin: 3px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #header {
+            color: black;
+            font-family: sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        #header img {
+            image-rendering: optimizeSpeed;
+            vertical-align: middle;
+        }
+
+        /* Zerando padding e margin para facilitar a customização */
+        ul ,li {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav>ul>li {
+            display: inline-block;
+            padding: 8px 1px;
+            margin-left: 15px;
+            margin-right: -5px;
+            font-family: sans-serif;
+            font-size: small;
+            letter-spacing: 0.5px;
+        }
+        
+        article {
+            min-height: 480px;
+            padding: 1em;
+        }
+
+        article table {
+            table-layout: auto;
+        }
+
+        article table td {
+            max-width: max-content;
+        }
+
+        article label {
+            display: inline-block;
+            width: 110px;
+        }
+
+
+        input[type="text"], #email {
+            width: 350px;
+        }
+
+        footer {
+            line-height: 2em;
+            color: #1f1f1f;
+            font-family: sans-serif;
+            padding-left: 10px;
+        }
+
+        #cpf {
+            width: 11ch;
+        }
+        
+        #naturalidade, #profissao, #associacao, #bairro, #cidade {
+            width: 200px;
+        }
+
+        #nacionalidade, #rg, #nascimento, #cep {
+            width: 150px;
+        }
+
+        #instituicao {
+            width: 250px;
+        }
+
+        #em-rg {
+            width: 100px;
+        }
+
+        #numero {
+            width: 8ch;
+        }
+
+        #ddi {
+            width: 4ch;
+        }
+
+        #telefone {
+            width: 10ch;
+        }
+
+        </style>
+</head>
+<body>
+    <main id="principal">
+        <header id="header">
+            <img src="https://webmedia.org.br/2016/wp-content/uploads/2016/09/InstitutoDelta__PNG.png" alt="InstitutoDelta" width="150">
+            Formulário de Associação
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html" target="_parent">Home</a></li>
+                <li><a href="" target="_self">Cadastro</a></li>
+                <li><a href="" target="_blank">Pagamento</a></li>
+            </ul>
+        </nav>
+        <article>
+            <form action="" method="get">
+                <fieldset>
+                    <legend align="center">DADOS PESSOAIS</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="cpf">CPF:</label>
+                                <input type="text" pattern="[0-9]{11}" maxlength="11" name="cpf" id="cpf" required>
+                                <span>(apenas numeros)</span>
+                            </td>
+                            <td>
+                                <label for="nascimento">Nacimento:</label>
+                                <input type="date" name="nascimento" id="nascimento" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="nome">Nome:</label>
+                                <input type="text" name="nome" id="nome" required>
+                            </td>
+                            <td>
+                                <label for="naturalidade">Naturalidade:</label>
+                                <input type="text" name="naturalidade" id="naturalidade" required>
+                                <select name="naturalidade">
+                                    <option value="ac">AC</option>
+                                    <option value="al">AL</option>
+                                    <option value="ap">AP</option>
+                                    <option value="am">AM</option>
+                                    <option value="ba">BA</option>
+                                    <option value="ce">CE</option>
+                                    <option value="df">DF</option>
+                                    <option value="es">ES</option>
+                                    <option value="go">GO</option>
+                                    <option value="ma">MA</option>
+                                    <option value="mt">MT</option>
+                                    <option value="ms">MS</option>
+                                    <option value="mg">MG</option>
+                                    <option value="pa">PA</option>
+                                    <option value="pb">PB</option>
+                                    <option value="pr">PR</option>
+                                    <option value="pe">PE</option>
+                                    <option value="pi" selected>PI</option>
+                                    <option value="rj">RJ</option>
+                                    <option value="rn">RN</option>
+                                    <option value="ro">RO</option>
+                                    <option value="rr">RR</option>
+                                    <option value="rs">RS</option>
+                                    <option value="sc">SC</option>
+                                    <option value="sp">SP</option>
+                                    <option value="se">SE</option>
+                                    <option value="to">TO</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="nacionalidade">Nacieonalidade:</label>
+                                <input type="text" value="Brasileira" name="Nacieonalidade" id="nacionalidade" required>
+                            </td>
+                            <td>
+                                <label for="civil">Estado Civil:</label>
+                                <select name="civil" id="civil">
+                                    <option value="solteiro" selected>Solteiro</option>
+                                    <option value="casado">Casado</option>
+                                    <option value="divorciado">Divorciado</option>
+                                    <option value="viuvo">Viúvo</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="associacao">Tipo associação:</label>
+                                <select name="associacao" id="associacao">
+                                    <option value="">Estudante (R15.00 por ano)</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label for="instituicao">Instituição:</label>
+                                <input type="text" name="instituicao" id="instituicao" required>
+                                <span>(universidade, faculdade, empresa, etc.)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="rg">RG:</label>
+                                <input type="number" min="0" required name="rg" id="rg">
+                                <label for="em-rg" style="width: fit-content;">Emissor RG:</label>
+                                <input type="text" pattern="[0-9]" name="em-rg" id="em-rg" required>
+                            </td>
+                            <td>
+                                <label for="profissao">Profissão:</label>
+                                <input type="text" name="profissao" id="profissao" required>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <br/>
+                <fieldset>
+                    <legend align="center">DADOS PARA CONTATO</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="logradouro">Logradouro:</label>
+                                <input type="text" name="logradouro" id="logradouro" required>
+                            </td>
+                            <td>
+                                <label for="numero">Número:</label>
+                                <input type="number" min="0" pattern="[0-9]" name="numero" id="numero" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="complemento">Complemento:</label>
+                                <input type="text" maxlength="30">
+                            </td>
+                            <td>
+                                <label for="bairro">Bairro</label>
+                                <input type="text" name="bairro" id="bairro" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="cep">CEP:</label>
+                                <input type="number" name="cep" id="cep">
+                                <span>(apenas numeros)</span>
+                            </td>
+                            <td>
+                                <label for="cidade">Cidade:</label>
+                                <input type="text" pattern="[a-zA-Z]" name="cidade" id="cidade" required>
+                                <select name="cidade">
+                                    <option value="ac">AC</option>
+                                    <option value="al">AL</option>
+                                    <option value="ap">AP</option>
+                                    <option value="am">AM</option>
+                                    <option value="ba">BA</option>
+                                    <option value="ce">CE</option>
+                                    <option value="df">DF</option>
+                                    <option value="es">ES</option>
+                                    <option value="go">GO</option>
+                                    <option value="ma">MA</option>
+                                    <option value="mt">MT</option>
+                                    <option value="ms">MS</option>
+                                    <option value="mg">MG</option>
+                                    <option value="pa">PA</option>
+                                    <option value="pb">PB</option>
+                                    <option value="pr">PR</option>
+                                    <option value="pe">PE</option>
+                                    <option value="pi" selected>PI</option>
+                                    <option value="rj">RJ</option>
+                                    <option value="rn">RN</option>
+                                    <option value="ro">RO</option>
+                                    <option value="rr">RR</option>
+                                    <option value="rs">RS</option>
+                                    <option value="sc">SC</option>
+                                    <option value="sp">SP</option>
+                                    <option value="se">SE</option>
+                                    <option value="to">TO</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="email">E-mail:</label>
+                                <input type="email" name="email" id="email" placeholder="example@mail.com">
+                            </td>
+                            <td>
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" min="0" name="telefone" id="ddi">
+                                <input type="tel" min="0" name="telefone" id="telefone">
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <br/>
+                <input type="submit" value="Confirmar">
+            </form>
+        </article>  
+        <footer>
+            <font>&copy 2015 Instituto Delta. All rights reserved.</font>
+        </footer>     
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 100vh;
+      background-image: url('https://www.mpg.de/20549704/original-1688016461.jpg?t=eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0Ijo2MjgsImZpdCI6ImNyb3AiLCJvYmpfaWQiOjIwNTQ5NzA0fQ%3D%3D--abc958d6bb02b36c35fb521668d0413010ba50dd');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: grid;
+      place-items: center;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 500px;
+      width: 500px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      border: 2px solid #b4b4b428;
+      box-shadow: 0px 5px 20px #ffffff4d;
+      row-gap: 2rem;
+      /* box-shadow: inset 3px 3px 5px #c5c5c5,
+        inset -3px -3px 5px #ffffff;
+      ; */
+
+    }
+
+    #email {
+      /* background: none; */
+    }
+
+    .spinner {
+      position: fixed;
+      bottom: 0;
+      width: 70.4px;
+      height: 70.4px;
+      --clr: rgb(232, 159, 247);
+      --clr-alpha: rgb(247, 197, 159, .1);
+      animation: spinner 1.6s infinite ease;
+      transform-style: preserve-3d;
+    }
+
+    .spinner>div {
+      background-color: var(--clr-alpha);
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      border: 3.5px solid var(--clr);
+    }
+
+    .spinner div:nth-of-type(1) {
+      transform: translateZ(-35.2px) rotateY(180deg);
+    }
+
+    .spinner div:nth-of-type(2) {
+      transform: rotateY(-270deg) translateX(50%);
+      transform-origin: top right;
+    }
+
+    .spinner div:nth-of-type(3) {
+      transform: rotateY(270deg) translateX(-50%);
+      transform-origin: center left;
+    }
+
+    .spinner div:nth-of-type(4) {
+      transform: rotateX(90deg) translateY(-50%);
+      transform-origin: top center;
+    }
+
+    .spinner div:nth-of-type(5) {
+      transform: rotateX(-90deg) translateY(50%);
+      transform-origin: bottom center;
+    }
+
+    .spinner div:nth-of-type(6) {
+      transform: translateZ(35.2px);
+    }
+
+    @keyframes spinner {
+      0% {
+        transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+      }
+
+      50% {
+        transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+      }
+
+      100% {
+        transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+      }
+    }
+
+    .group {
+      position: relative;
+    }
+
+    .input {
+      font-size: 16px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 200px;
+      border: none;
+      border-bottom: 1px solid #515151;
+      background: transparent;
+    }
+
+    .input:focus {
+      outline: none;
+    }
+
+    label {
+      color: #999;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+
+    .input:focus~label,
+    .input:valid~label {
+      top: -20px;
+      font-size: 14px;
+      color: #5264AE;
+    }
+
+    .bar {
+      position: relative;
+      display: block;
+      width: 200px;
+    }
+
+    .bar:before,
+    .bar:after {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 1px;
+      position: absolute;
+      background: #5264AE;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+
+    .bar:before {
+      left: 50%;
+    }
+
+    .bar:after {
+      right: 50%;
+    }
+
+    .input:focus~.bar:before,
+    .input:focus~.bar:after {
+      width: 50%;
+    }
+
+    .highlight {
+      position: absolute;
+      height: 60%;
+      width: 100px;
+      top: 25%;
+      left: 0;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .input:focus~.highlight {
+      animation: inputHighlighter 0.3s ease;
+    }
+
+    @keyframes inputHighlighter {
+      from {
+        background: #5264AE;
+      }
+
+      to {
+        width: 0;
+        background: transparent;
+      }
+    }
+
+    #submit {
+      width: 80%;
+    }
+
+    .card-container {}
+
+    .card {
+      display: inline-block;
+      background: #8592c9;
+      width: 70px;
+      height: 100px;
+      border-radius: 12px;
+      z-index: 1;
+
+      & p {
+        font-size: 50px;
+        text-shadow: 2px 2px 2px #00000059;
+      }
+    }
+
+    .card::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      background: red;
+      width: 70px;
+      height: 100px;
+      z-index: 0;
+    }
+
+    .card {
+      transform: rotateX(45deg);
+      transform-origin: top;
+      transition: transform 1s;
+
+      &:hover {
+        transform: rotateX(0deg);
+      }
+
+      /* animation: 1s pular infinite; */
+    }
+
+    @keyframes pular {
+      from {}
+
+      to {}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form class="form">
+      <div class="group">
+        <input required="" type="text" class="input">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Email</label>
+      </div>
+      <div class="group">
+        <input required="" type="text" class="input">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Password</label>
+      </div>
+      <input type="submit" value="Enviar" id="submit">
+      <div class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="card-container">
+        <span class="card">
+          <p>Oi</p>
+        </span>
+        <span class="card">
+
+        </span>
+        <span class="card">
+
+        </span>
+        <span class="card">
+
+        </span>
+      </div>
+    </form>
+
+  </div>
+</body>
+
+</html>

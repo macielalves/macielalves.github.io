@@ -1,0 +1,134 @@
+body {
+    /*background: #fff; no lugar do parametro bgcolor="#fff"*/
+    background: whitesmoke;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.modo-dark {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+div#profile {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin-top: 3em;
+}
+
+div#profile h1 {
+    font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+    font-size: 3em;
+    text-shadow: 2px 2px 2px #1f1f1f;
+    text-transform: uppercase;
+    color: #fdd402;
+    margin-bottom: 0;
+}
+
+div#profile img {
+    border-radius: 50%;
+    transition: linear 200ms;
+}
+
+div#profile img:hover {
+    /* border-radius: 10px; */
+    transform: scale(1.1);
+}
+
+div#profile input[type="checkbox"] {
+    display: none;
+}
+
+#disco-box input:checked ~ img {
+    animation: 7.5s disco infinite linear;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 53%;
+}
+
+td, th {
+    border: 2px solid #fdd402;
+    border-left: none;
+    border-right: none;
+}
+
+div#main {
+    margin: 3rem 0;
+}
+
+div#conteudo {
+    width: 100%;
+    margin-bottom: 4vw;
+}
+
+div#audios {
+    display: flex;
+    place-content: center;
+}
+
+div#audios audio {
+    width: 512px;
+}
+
+div#videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    place-items: center;
+    place-content: center;
+    width: 980px;
+    margin: 0 auto;
+}
+
+div#videos h1 {
+    flex: 0 0 960px;
+}
+
+div#videos object {
+    width: 480px;
+    height: 270px;
+    background: grey;
+    border-radius: 20px;
+}
+
+div#asides {
+    display: flex;
+    place-items: center;
+    place-content: center;
+}
+
+div#asides iframe {
+    flex: 0 0 980px;
+}
+
+div#footer {
+    display: flex;
+    place-items: center;
+    place-content: center;
+    font-size: 2em;
+    background: #1f1d1d;
+    color: white;
+    margin-top: 1em;
+    height: 300px;
+}
+
+
+@media (device-width < 372px) {
+
+}
+
+
+@keyframes disco {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
