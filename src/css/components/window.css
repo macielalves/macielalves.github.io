@@ -126,7 +126,7 @@
 .window-content {
   position: relative;
   height: calc(100% - var(--window-header-height, 32px));
-  overflow: auto;
+  overflow: hidden;
   cursor: default;
   user-select: auto;
 }

@@ -98,10 +98,10 @@ export class Calc {
      */
     handleNumber(value) {
         if (this.shouldResetDisplay) {
-            this.display.value = '0';
+            this.display.value = '';
             this.shouldResetDisplay = false;
         }
-
+        
         if (value === '.' && this.display.value.includes('.')) return;
         if (value === '0' && this.display.value === '0') return;
 

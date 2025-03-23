@@ -1,0 +1,131 @@
+.cmd {
+  background-color: #1e1e1e;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* .cmd::before {
+  background: #2f2f2f;
+  content: '';
+  height: 30px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.cmd::after {
+  content: '⚪ ⚪ ⚪';
+  color: #666;
+  font-size: 12px;
+  left: 10px;
+  position: absolute;
+  top: 8px;
+  z-index: 1;
+} */
+
+.cmd-output {
+  color: #e0e0e0;
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-y: auto;
+  padding: 40px 15px 10px;
+}
+
+.cmd-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cmd-output::-webkit-scrollbar-track {
+  background: #2f2f2f;
+}
+
+.cmd-output::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 4px;
+}
+
+.cmd-line {
+  margin-bottom: 8px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.cmd-line.error {
+  color: #ff6b6b;
+}
+
+.cmd-line.success {
+  color: #69db7c;
+}
+
+.cmd-input {
+  background-color: #2f2f2f;
+  border: none;
+  border-top: 1px solid #404040;
+  color: #e0e0e0;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  padding: 12px 15px;
+  width: 100%;
+}
+
+.cmd-input::placeholder {
+  color: #666;
+}
+
+/* Animação para o cursor piscante */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cmd-input:focus::after {
+  content: '|';
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+/* Estilo para comandos em destaque */
+.cmd-line .command {
+  color: #4dabf7;
+}
+
+.cmd-line .param {
+  color: #ffd43b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cmd {
+  }
+}
+
+/* Tema claro (opcional) */
+.cmd.light-theme {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.cmd.light-theme::before {
+  background: #e9ecef;
+}
+
+.cmd.light-theme .cmd-output {
+  color: #212529;
+}
+
+.cmd.light-theme .cmd-input {
+  background-color: #e9ecef;
+  border-top: 1px solid #dee2e6;
+  color: #212529;
+} 

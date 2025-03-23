@@ -60,10 +60,24 @@ export class ResizeManager {
     });
   }
 
+  /**
+   * Remove as alças de resize
+   * @param {HTMLElement} windowElement - Elemento da janela
+   */
   removeResizeHandles(windowElement) {
     const handles = windowElement.querySelectorAll('.resize-handle');
     handles.forEach(handle => handle.remove());
   }
+
+  /**
+   * Toggle the resize handles
+   * @param {HTMLElement} windowElement - Elemento da janela
+   */
+  toggleResizeHandles(windowElement) {
+    const resizeHandles = windowElement?.querySelectorAll('.resize-handle');
+    if (!resizeHandles) return;
+    resizeHandles.forEach(handle => handle.classList.toggle('hidden'));
+  } 
 
   /**
    * Inicia o redimensionamento da janela

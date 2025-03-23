@@ -18,13 +18,13 @@ export class SubBrowser {
           <button class="browser-btn reload" title="Recarregar">↻</button>
         </div>
         <div class="browser-address-bar">
-          <input type="text" class="url-input" placeholder="Digite uma URL">
+          <input type="text" name="url-input-browser" class="url-input" placeholder="Digite uma URL">
           <button class="browser-btn go">Ir</button>
         </div>
       </div>
       <div class="browser-content">
         <iframe id="browser-frame" 
-                sandbox="allow-same-origin allow-scripts allow-forms allow-presentation allow-fullscreen"
+                sandbox="allow-same-origin allow-scripts allow-forms allow-presentation"
                 allowfullscreen>
         </iframe>
       </div>

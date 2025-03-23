@@ -5,6 +5,8 @@
 @import 'components/collision.css';
 @import 'components/calc.css';
 @import 'components/sub-browser.css';
+@import 'components/nav-bar-dock.css';
+@import 'components/cmd.css';
 
 /* Estilos globais */
 :root {
@@ -26,6 +28,10 @@
   --window-min-height: 200px;
   --window-header-height: 32px;
   --window-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  /* Cores do dock */
+  --nav-bar-dock-background-color: #1d1d1d;
+  --nav-bar-dock-border-color: #535353;
 
   /* Cores do header */
   --header-bg: #555;
@@ -74,4 +80,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.hidden {
+  display: none;
 }
