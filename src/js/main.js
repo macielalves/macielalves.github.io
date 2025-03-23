@@ -77,31 +77,30 @@ const createCalcWindow = () => {
   const calc = new Calc();
   const calcWindow = calc.createCalculator();
   calc.init();
-  windowApp.setSize(400, 500);
+  windowApp.setSizeAuto();
+  windowApp.setMinSize(100, 100);
+  windowApp.setPosition(100, 100);
   windowApp.setContent(calcWindow);
 }
 
 const createCmdWindow = () => {
   const cmdWindow = createWindow('CMD', 'cmd');
-  cmdWindow.setContent(`
-    <h1>CMD</h1>
-    <p>Comando do Windows</p>
-    <input type="text" id="cmdInput" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off">
-    <button id="cmdButton">Executar</button>
-  `);
-  const cmdInput = document.getElementById('cmdInput');
-  const cmdButton = document.getElementById('cmdButton');
-  cmdButton.addEventListener('click', () => {
-    const command = cmdInput.value;
-    console.log(command);
-  });
 }
 
 const createBrowserWindow = () => {
-  const windowApp = new WindowApp('Navegador', 'browser');
+  const windowApp = new WindowApp('Navegador', 'browser', false);
   windowApp.open();
   const browserWindow = new SubBrowser();
   const browser = browserWindow.createBrowser();
-  browserWindow.navigate('https://www.youtube.com/embed/dOJY4krNdws?autoplay=1&mute=0&fs=1');
+  browserWindow.navigate('https://thebotcatalog.vercel.app');
+  const windowWidth = window.innerWidth;
+  if (windowWidth < 400) {
+    windowApp.setMinSize(100, 100);
+  } else {
+    windowApp.setMinSize(600, 400);
+    windowApp.setSize(600, 400);
+  }
+  windowApp.setResizable(true);
+  windowApp.setPosition(20, 10, "%");
   windowApp.setContent(browser);
 }

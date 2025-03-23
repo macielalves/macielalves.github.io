@@ -1,4 +1,14 @@
 export class ResizeManager {
+  /**
+   * ResizeManager(options = {})
+   * @param {Object} options - Opções para o gerenciador de redimensionamento
+   * @param {number} options.minWidth - Largura mínima da janela
+   * @param {number} options.minHeight - Altura mínima da janela
+   * @param {Array} options.handles - Alças de redimensionamento
+   * @param {Function} options.onResize - Função chamada quando a janela é redimensionada
+   * @param {Function} options.onResizeStart - Função chamada quando o redimensionamento começa
+   * @param {Function} options.onResizeEnd - Função chamada quando o redimensionamento termina
+   */
   constructor(options = {}) {
     this.options = {
       minWidth: 300,
@@ -15,6 +25,11 @@ export class ResizeManager {
     this.boundMouseUp = this.handleMouseUp.bind(this);
   }
 
+  /**
+   * Configura a janela para ser redimensionável
+   * @param {HTMLElement} windowElement - Elemento da janela
+   * @returns {HTMLElement} - Elemento da janela
+   */
   setupResizableWindow(windowElement) {
     if (!windowElement || windowElement.dataset.resizable) return;
 
@@ -26,6 +41,10 @@ export class ResizeManager {
     return windowElement;
   }
 
+  /**
+   * Adiciona as alças de resize
+   * @param {HTMLElement} windowElement - Elemento da janela
+   */
   addResizeHandles(windowElement) {
     // Adiciona as alças de resize
     this.options.handles.forEach(position => {
@@ -46,6 +65,12 @@ export class ResizeManager {
     handles.forEach(handle => handle.remove());
   }
 
+  /**
+   * Inicia o redimensionamento da janela
+   * @param {MouseEvent} e - Evento de mouse
+   * @param {HTMLElement} element - Elemento da janela
+   * @param {string} handlePosition - Posição da alça de redimensionamento
+   */
   handleResizeStart(e, element, handlePosition) {
     e.preventDefault();
 
@@ -75,6 +100,10 @@ export class ResizeManager {
     document.addEventListener('mouseup', this.boundMouseUp);
   }
 
+  /**
+   * Manipula o movimento do mouse durante o redimensionamento
+   * @param {MouseEvent} e - Evento de mouse
+   */
   handleMouseMove(e) {
     if (!this.resizeState) return;
 
@@ -162,6 +191,9 @@ export class ResizeManager {
     });
   }
 
+  /**
+   * Manipula o evento de soltar o mouse
+   */
   handleMouseUp() {
     if (!this.resizeState) return;
 

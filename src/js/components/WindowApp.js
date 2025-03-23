@@ -9,16 +9,6 @@ export class WindowApp {
     this._window = null;
     this._dragManager = new DragManager();
     this._resize = resize;
-    if (this._resize) {
-      this._resizeManager = new ResizeManager({
-        onResizeStart: (el) => {
-          el.classList.add('no-drag'); // Previne drag durante resize
-        },
-        onResizeEnd: (el) => {
-          el.classList.remove('no-drag');
-        }
-      });
-    }
   }
 
   open() {
@@ -34,16 +24,7 @@ export class WindowApp {
       dragHandle: '.window-header',
       excludeNodes: '.window-controls, .window-button, .window-content, .resize-handle, .no-drag'
     });
-    if (this._resize) {
-      this._resizeManager.setupResizableWindow(this._window);
-    } else {
-      // Remove icon de maximizar
-      const maximizeButton = this._window.querySelector('.maximize-button');
-      if (maximizeButton) {
-        maximizeButton.remove();
-      }
-    }
-
+    this.setResizable(this._resize);
     this.centerWindow();
   }
 
@@ -55,12 +36,12 @@ export class WindowApp {
                   <div class="window-button minimize-button">
                     <i class="fas fa-window-minimize"></i>
                   </div>
-                <div class="window-button maximize-button">
-                  <i class="fas fa-window-maximize"></i>
-                </div>
-                <div class="window-button close-button">
-                  <i class="fas fa-times"></i>
-                </div>
+                  <div class="window-button maximize-button">
+                    <i class="fas fa-window-maximize"></i>
+                  </div>
+                  <div class="window-button close-button">
+                    <i class="fas fa-times"></i>
+                  </div>
                 </div>
                 <div class="window-title">${this._name}</div>
               </div>
@@ -103,8 +84,7 @@ export class WindowApp {
     const left = (screenWidth - windowWidth) / 2;
     const top = (screenHeight - windowHeight) / 2;
 
-    this._window.style.left = `${left}px`;
-    this._window.style.top = `${top}px`;
+    this.setPosition(left, top);
   }
 
   minimize() {
@@ -113,13 +93,6 @@ export class WindowApp {
 
   maximize() {
     this._window.classList.toggle('maximized');
-    if (this._window.classList.contains('maximized')) {
-      // Remove resize handles
-      this._window.style.resize = 'none';
-    } else {
-      // Add resize handles
-      this._window.style.resize = 'both';
-    }
   }
 
   close() {
@@ -159,6 +132,94 @@ export class WindowApp {
   setSize(width, height) {
     this._window.style.width = `${width}px`;
     this._window.style.height = `${height}px`;
+  }
+
+  /**
+   * Define o tamanho da janela como automático
+   */
+  setSizeAuto() {
+    this._window.style.width = 'auto';
+    this._window.style.height = 'auto';
+  }
+
+  /**
+   * Define o tamanho mínimo da janela
+   * @param {number} width - Largura mínima da janela
+   * @param {number} height - Altura mínima da janela
+   */
+  setMinSize(width, height) {
+    this._window.style.minWidth = `${width}px`;
+    this._window.style.minHeight = `${height}px`;
+  }
+
+  /**
+   * Define o tamanho máximo da janela
+   * @param {number} width - Largura máxima da janela
+   * @param {number} height - Altura máxima da janela
+   */
+  setMaxSize(width, height) {
+    this._window.style.maxWidth = `${width}px`;
+    this._window.style.maxHeight = `${height}px`;
+  }
+
+  /**
+   * Define o tamanho mínimo e máximo da janela
+   * @param {number} minWidth - Largura mínima da janela
+   * @param {number} minHeight - Altura mínima da janela
+   * @param {number} maxWidth - Largura máxima da janela
+   * @param {number} maxHeight - Altura máxima da janela
+   */
+  setMinMaxSize(minWidth, minHeight, maxWidth, maxHeight) {
+    this.setMinSize(minWidth, minHeight);
+    this.setMaxSize(maxWidth, maxHeight);
+  }
+
+  /**
+   * Define se a janela é redimensionável
+   * @param {boolean} resizable - Se a janela é redimensionável
+   */
+  setResizable(resizable) {
+    this._resize = resizable;
+    const maximizeButton = this._window?.querySelector('.maximize-button');
+    if (this._resize && !this._resizeManager) {
+      this._resizeManager = new ResizeManager({
+        onResizeStart: (el) => {
+          el.classList.add('no-drag'); // Previne drag durante resize
+        },
+        onResizeEnd: (el) => {
+          el.classList.remove('no-drag');
+        }
+      });
+      this._resizeManager.setupResizableWindow(this._window);
+
+      if (!maximizeButton) {
+        const _maximizeButton = document.createElement('div');
+        _maximizeButton.classList.add('window-button');
+        _maximizeButton.classList.add('maximize-button');
+        _maximizeButton.innerHTML = '<i class="fas fa-window-maximize"></i>';
+        _maximizeButton.addEventListener('click', () => this.maximize());
+        this._window?.querySelector('.window-controls').appendChild(_maximizeButton);
+      }
+    } else {
+      if (this._resizeManager) {
+        this._resizeManager.destroy();
+      }
+      // Remove icon de maximizar
+      if (maximizeButton) {
+        maximizeButton.remove();
+      }
+    }
+  }
+
+  /**
+   * Define a posição da janela
+   * @param {number} x - Posição X da janela em pixels
+   * @param {number} y - Posição Y da janela em pixels
+   * @param {string} unit - Unidade de medida (px, %, etc.)
+   */
+  setPosition(x, y, unit = "px" ) {
+    this._window.style.left = `${x}${unit}`;
+    this._window.style.top = `${y}${unit}`;
   }
 
   /**
