@@ -1,429 +1,265 @@
-/* Variáveis globais */
+/* Arquivo restaurado de um commit usando:
+  git checkout 3f7098545eb3c164c1ff37a29095a3043c9c8d69 -- ./css/style.css
+*/
+/* Css da Main page */
 :root {
-  /* Cores do sistema */
-  --color-dark: #262626;
-  --color-red: #9b0000;
-  --color-yellow: #ffe100;
-  --color-green: #62e417;
-  --color-cyan: #00f8cb;
-  --color-blue-light: #00b3ff;
-  --color-blue-dark: #0000cb;
-  --color-purple: #6812c3;
-  --color-pink: #e607bd;
-  --color-coral: #f6213d;
-
-  /* Variáveis da janela */
-  --window-border-radius: 8px;
-  --window-min-width: 300px;
-  --window-min-height: 200px;
-  --window-header-height: 32px;
-  --window-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-
-  /* Cores do header */
-  --header-bg: #555;
-  --header-text-color: #e0e0e0;
-  --header-button-bg: #777;
-  --header-button-hover: #999;
-  --header-button-active: #555;
-  --header-button-text-color: #fff;
-
-  /* Variáveis de z-index */
-  --z-index-desktop: 1;
-  --z-index-window: 10;
-  --z-index-active-window: 11;
+  --top-bar-h: 30px;
+  --janela-padding-top: 20px;
 }
 
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body,
+html {
+  width: 100vw;
+  height: 100vh;
 }
 
-/* Animação de fundo */
-@keyframes rainbow-background {
-  0%, 100% { background-color: var(--color-dark); }
-  10% { background-color: var(--color-red); }
-  20% { background-color: var(--color-yellow); }
-  30% { background-color: var(--color-green); }
-  40% { background-color: var(--color-cyan); }
-  50% { background-color: var(--color-blue-light); }
-  60% { background-color: var(--color-blue-dark); }
-  70% { background-color: var(--color-purple); }
-  80% { background-color: var(--color-pink); }
-  90% { background-color: var(--color-coral); }
-}
-
-/* Estilos base */
 body {
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  height: 100vh;
+  animation: body 20s infinite alternate ease-in;
+  box-sizing: border-box;
+  margin: 0;
   overflow: hidden;
-  position: relative;
 }
 
-/* Desktop */
-.desktop {
-  height: 100vh;
-  padding: 20px;
-  position: relative;
-  z-index: var(--z-index-desktop);
+#container_main {
+  position: sticky;
+  top: 8%;
+  left: 12%;
+  width: 90%;
+  max-width: 1024px;
 }
 
-/* Ícones da área de trabalho */
-.desktop-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80px;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 4px;
-  transition: background-color 0.2s;
+div#janela {
+  background: #161616;
+  font-size: 1.5em;
+  font-family: "Consolas", sans-serif;
+  padding-top: var(--janela-padding-top);
+  max-height: 500px;
+  transition: all 150ms;
+  overflow-y: auto;
 }
 
-.desktop-icon:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.desktop-icon img {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 8px;
-}
-
-.desktop-icon span {
-  color: white;
-  text-align: center;
-  font-size: 12px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* Janelas */
-.window {
-  position: absolute;
-  min-width: 300px;
-  min-height: 200px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  will-change: transform, width, height, left, top;
-  transition: box-shadow 0.2s ease;
-}
-
-.window.active {
-  z-index: var(--z-index-active-window);
-}
-
-.window-header {
-  position: relative;
-  height: var(--window-header-height, 32px);
-  padding: 0 8px;
-  background: var(--header-bg, #f0f0f0);
-  cursor: grab;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  user-select: none;
-}
-
-.window-header h3 {
-  color: var(--header-text-color, #fff);
-  font-size: 14px;
-  flex-grow: 1;
-}
-
-/* Previne problemas de arrasto nos controles */
-.window-controls {
-  position: relative;
-  z-index: 3;
-  cursor: default;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.window-button {
-  /* cursor: pointer !important; */
-  width: 24px;
-  height: 24px;
-  background: var(--header-button-bg, #777);
-  color: var(--header-button-text-color, #fff);
-  border: none;
-  padding: 4px 8px;
-  border-radius: 50%;
-  transition: background-color 0.2s;
-}
-
-.window-button:hover {
-  filter: brightness(0.9);
-}
-
-.minimize-button {
-  background: #ffbd44;
-}
-
-.maximize-button {
-  background: #00ca4e;
-}
-
-.close-button {
-  background: #ff605c;
-}
-
-.close-button:hover {
-  background: #ff3333;
-}
-
-.window-content {
-  position: relative;
-  height: calc(100% - var(--window-header-height, 32px));
-  overflow: auto;
-  cursor: default;
-  user-select: auto;
-}
-
-/* Estados da janela */
-.window {
-  min-width: 300px;
-  min-height: 200px;
-  transition: all 0.3s ease;
-}
-
-.window-maximized {
-  width: 100vw !important;
-  height: 100vh !important;
-  top: 0 !important;
-  left: 0 !important;
-  transform: none !important;
-  border-radius: 0;
-}
-
-.window-minimized {
-  transform: translate3d(0, calc(100vh - 40px), 0) scale(0.8) !important;
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-.window-closing {
-  animation: windowClose 0.2s ease-in forwards !important;
-  pointer-events: none;
-}
-
-/* Utilitários */
-.dragging {
-  user-select: none;
-  opacity: 0.8;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .window {
-    width: 100vw;
-    height: 100vh;
-    top: 0 !important;
-    left: 0 !important;
-    border-radius: 0;
-  }
-
-  .desktop-icon {
-    width: 60px;
-  }
-}
-
-/* Animações */
-@keyframes windowClose {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-}
-
-@keyframes windowOpen {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.window {
-  animation: windowOpen 0.2s ease-out;
-}
-
-.window.dragging {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  opacity: 0.95;
-  cursor: grabbing !important;
-  transition: none !important;
-  user-select: none;
-}
-
-.window-header:active {
-  cursor: grabbing;
-}
-
-/* Estilos para as alças de resize */
-.resize-handle {
-  position: absolute;
+div#janela::-webkit-scrollbar {
   background: transparent;
-  z-index: 2;
+  width: 10px;
 }
 
-/* Alças das bordas */
-.resize-n, .resize-s {
-  left: 4px;
-  right: 4px;
-  height: 6px;
+div#janela::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
 }
 
-.resize-e, .resize-w {
-  top: 4px;
-  bottom: 4px;
-  width: 6px;
+div#janela:hover::-webkit-scrollbar-thumb {
+  background-color: #585858;
 }
 
-.resize-n { top: 0; cursor: n-resize; }
-.resize-s { bottom: 0; cursor: s-resize; }
-.resize-e { right: 0; cursor: e-resize; }
-.resize-w { left: 0; cursor: w-resize; }
-
-/* Alças dos cantos */
-.resize-ne, .resize-nw, .resize-se, .resize-sw {
-  width: 8px;
-  height: 8px;
-}
-
-.resize-ne { top: 0; right: 0; cursor: ne-resize; }
-.resize-se { bottom: 0; right: 0; cursor: se-resize; }
-.resize-sw { bottom: 0; left: 0; cursor: sw-resize; }
-.resize-nw { top: 0; left: 0; cursor: nw-resize; }
-
-/* Estados da janela */
-.window {
-  position: absolute;
-  min-width: 300px;
-  min-height: 200px;
-}
-
-.window.resizing {
-  user-select: none;
-  opacity: 0.95;
-}
-
-/* Feedback visual durante resize */
-.window.resizing::after {
-  content: attr(data-dimensions);
-  position: absolute;
-  bottom: -20px;
-    right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-size: 12px;
-  pointer-events: none;
-}
-
-/* Mostrar alças apenas no hover */
-.resize-handle {
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.window:hover .resize-handle {
-  opacity: 1;
-}
-
-/* Feedback visual das alças no hover */
-.resize-handle:hover {
-  background: rgba(0, 120, 255, 0.2);
-}
-
-/* Efeitos de colisão */
-@keyframes collisionHorizontal {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-}
-
-@keyframes collisionVertical {
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(-5px); }
-  75% { transform: translateY(5px); }
-}
-
-.collision-effect {
-  position: relative;
-}
-
-.collision-horizontal {
-  animation: collisionHorizontal 0.15s ease-in-out;
-}
-
-.collision-vertical {
-  animation: collisionVertical 0.15s ease-in-out;
-}
-
-.collision-effect::after {
-  content: '';
-  position: absolute;
+.janela_full#container_main {
+  /* position: relative; */
   top: 0;
   left: 0;
-  right: 0;
+  /* transform: translate(0, 0); */
+  transition: all 150ms;
+  width: 100%;
+  height: calc(100% - var(--top-bar-h) - var(--janela-padding-top));
+  max-width: 100%;
+}
+
+.janela_full > #janela {
+  height: 100%;
+  max-height: 100%;
+}
+
+.janela_min#container_main {
+  /* position: fixed; */
   bottom: 0;
-  border: 2px solid rgba(255, 0, 0, 0.5);
-  border-radius: inherit;
-  animation: collisionBorder 0.15s ease-out;
-  pointer-events: none;
+  right: 0;
+  width: max-content;
+  height: 100%;
+  max-width: 100%;
+}
+.janela_min > #janela {
+  height: 50px;
+  max-height: 100%;
 }
 
-@keyframes collisionBorder {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+.janela_min > .top_bar {
+  width: 340px;
+  place-items: flex-end;
+  place-content: center;
 }
 
-[data-draggable="true"] {
-  user-select: none;
-  touch-action: none;
+div#janela:hover {
+  overflow-y: scroll;
 }
 
-.dragging {
-  opacity: 0.95;
-  cursor: grabbing !important;
-}
-
-.dragging * {
-  cursor: grabbing !important;
-}
-
-/* Feedback visual para áreas arrastáveis */
-.window-header:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* Estilo durante o arrasto */
-.window.dragging .window-header {
-  cursor: grabbing;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Garante que o conteúdo não interfere no arrasto */
-.window-content {
-  pointer-events: auto;
+#top_bar {
   position: relative;
-  z-index: 1;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  width: 100%;
+  height: var(--top-bar-h);
+  background-color: darkgray;
+  background-image: linear-gradient(to top, #707070 30%, #c4c4c4);
+  border-radius: 10px 10px 0 0;
 }
 
-.window-header {
-  position: relative;
-  z-index: 2;
+#top_bar:hover {
+  cursor: pointer;
+}
+
+.folder_dir {
+  text-align: center;
+  color: white;
+  font-family: "consolas", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.folder_dir::selection {
+  background-color: rgb(126, 19, 19);
+}
+
+.btn-span {
+  margin-top: 5px;
+  position: absolute;
+  left: 10px;
+  cursor: default;
+}
+
+.btn-span > span {
+  display: inline-block;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  cursor: inherit;
+}
+
+.btn_close {
+  background-color: #d40b0b;
+}
+
+.btn_max {
+  background-color: #07cf03;
+}
+
+.btn_min {
+  background-color: #d9cf0b;
+}
+
+.btn_close:hover {
+  background-color: red;
+}
+
+.btn_max:hover {
+  background-color: #04ff00;
+}
+
+.btn_min:hover {
+  background-color: #fff200;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 5px;
+}
+
+li::before {
+  content: "~$";
+  font-weight: bold;
+  color: red;
+  margin-right: 6px;
+  line-height: 1.4em;
+}
+
+/*== Links ==*/
+li a,
+input#prompt {
+  text-decoration: 2px none #8aff46;
+  color: #75c000;
+  transition: 200ms all;
+}
+
+li a:hover {
+  text-decoration: 2px underline #8aff46;
+  color: greenyellow;
+}
+
+li a:focus-visible {
+  animation: 1.5s pisca infinite ease reverse;
+}
+
+@media (max-width: 600px) {
+  #container_main {
+    position: sticky;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  div#janela {
+    height: 100%;
+    max-height: 100%;
+  }
+}
+
+li input[type="search"]#prompt {
+  display: inline;
+  cursor: text;
+  caret-color: #eee;
+  background: transparent;
+  outline: transparent;
+  font-size: inherit;
+  border: none;
+  width: 96%;
+}
+
+/*== Animation ==*/
+@keyframes body {
+  0% {
+    background-color: #262626;
+  }
+  10% {
+    background-color: #9b0000;
+  }
+  20% {
+    background-color: #ffe100;
+  }
+  30% {
+    background-color: #62e417;
+  }
+  40% {
+    background-color: #00f8cb;
+  }
+  50% {
+    background-color: #00b3ff;
+  }
+  60% {
+    background-color: #0000cb;
+  }
+  70% {
+    background-color: #6812c3;
+  }
+  80% {
+    background-color: #e607bd;
+  }
+  90% {
+    background-color: #f6213d;
+  }
+  100% {
+    background-color: #262626;
+  }
+}
+
+@keyframes pisca {
+  from {
+    color: #55ff00;
+    text-decoration: none;
+    outline-style: none;
+  }
+  to {
+    color: #ffffff;
+    outline-style: auto;
+  }
 }

@@ -81,13 +81,6 @@
   grid-column: span 2;
 }
 
-/* Animações */
-@keyframes buttonPress {
-  0% { transform: scale(1); }
-  50% { transform: scale(0.95); }
-  100% { transform: scale(1); }
-}
-
 .calc-btn:active {
   animation: buttonPress 0.1s ease-in-out;
 } 

@@ -1,0 +1,204 @@
+/* Animações de botão */
+@keyframes buttonPress {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animação para o cursor piscante */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Efeitos de colisão */
+@keyframes collisionHorizontal {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes collisionVertical {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-5px);
+  }
+
+  75% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes collisionBorder {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Animações de janela */
+@keyframes windowClose {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes windowOpen {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes windowMinimize {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, calc(100vh - 40px), 0) scale(0.8) !important;
+    opacity: 0.8;
+  }
+}
+
+/* Animações gerais */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {  
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {  
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {  
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {  
+    transform: translateX(0);
+  }
+  100% {  
+    transform: translateX(-100%);
+  }
+} 
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {  
+      transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {  
+    transform: scale(0);
+  }
+}
+
+@keyframes rotateIn {
+  0% {  
+    transform: rotate(0deg);
+  }
+  100% {  
+    transform: rotate(360deg);
+  }
+} 
+
+@keyframes rotateOut {
+  0% {  
+    transform: rotate(0deg);
+  }
+  100% {  
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes bounceIn {
+  0% {    
+    transform: scale(0);
+  }
+  100% {  
+    transform: scale(1);
+  }
+} 
+
+@keyframes bounceOut {
+  0% {  
+    transform: scale(1);
+  }
+  100% {    
+    transform: scale(0);
+  }
+}
+
+@keyframes shake {
+  0% {    
+    transform: translateX(0);
+  }
+  100% {  
+    transform: translateX(-10px);
+  }
+}

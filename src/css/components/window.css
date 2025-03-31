@@ -1,15 +1,20 @@
+.root {
+  height: 100vh;
+  width: 100vw;
+}
+
 /* Desktop */
 .desktop {
-  height: 100vh;
   position: relative;
   z-index: var(--z-index-desktop);
+  height: calc(100vh - var(--nav-bar-dock-height, 46px));
   display: flex;
   flex-flow: column wrap;
   align-content: flex-start;
   gap: 10px;
 }
 
-/* Ícones da área de trabalho */
+/* Ítems da área de trabalho */
 .desktop-icon {
   display: flex;
   flex-direction: column;
@@ -32,6 +37,41 @@
 }
 
 .desktop-icon span {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  height: 20px;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.desktop-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.desktop-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.desktop-link img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.desktop-link span {
   color: white;
   text-align: center;
   font-size: 12px;
@@ -145,7 +185,7 @@
 
 .window-maximized {
   width: 100vw !important;
-  height: 100vh !important;
+  height: calc(100vh - var(--nav-bar-dock-height, 46px)) !important;
   top: 0 !important;
   left: 0 !important;
   transform: none !important;
@@ -184,47 +224,14 @@
   }
 }
 
-/* Animações */
-@keyframes windowClose {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-}
-
-@keyframes windowOpen {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes windowMinimize {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate3d(0, calc(100vh - 40px), 0) scale(0.8) !important;
-    opacity: 0.8;
-  }
-}
-
 .window {
   animation: windowOpen 0.2s ease-out;
 }
 
+/* Aliases */
 .maximized {
   width: 100vw !important;
-  height: 100vh !important;
+  height: calc(100vh - var(--nav-bar-dock-height, 46px)) !important;
   top: 0 !important;
   left: 0 !important;
   transform: none !important;

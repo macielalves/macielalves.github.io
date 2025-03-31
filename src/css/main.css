@@ -7,6 +7,9 @@
 @import 'components/sub-browser.css';
 @import 'components/nav-bar-dock.css';
 @import 'components/cmd.css';
+@import 'components/animations.css';
+
+
 
 /* Estilos globais */
 :root {
@@ -46,6 +49,9 @@
   --z-index-window: 10;
   --z-index-active-window: 11;
 
+  /* Variáveis de altura */
+  --nav-bar-dock-height: 46px;
+
 }
 
 /* Reset básico */
@@ -84,4 +90,21 @@ body {
 
 .hidden {
   display: none;
+}
+
+.no-js {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.no-js p {
+  background-color: #960000;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: 0 4px 10px #000;
+  padding: 2em;
+  border-radius: 1em;
 }

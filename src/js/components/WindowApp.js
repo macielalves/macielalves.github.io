@@ -4,7 +4,7 @@ import { CollisionManager } from '../managers/CollisionManager.js';
 import { pushAppIconToDock, removeAppIconFromDock } from './NavBarDock.js';
 
 class Icon {
-  constructor(src) {
+  constructor(src='') {
     this._src = src;
   }
 
@@ -19,14 +19,20 @@ class Icon {
 
 
 export class WindowApp {
-  constructor(name, id, resize = true, icon=Icon) {
+  constructor(name, id, options={resize: true, icon: './src/assets/images/M.png'}) {
+    this._options = options;
     this._name = name;
     this._id = this.validateId(id);
     this._window = null;
     this._dragManager = new DragManager();
-    this._resize = resize;
+    this._resize = options.resize === undefined ? true : options.resize;
     this._hidden = false;
-    this._icon = new Icon(icon);
+    if (typeof options.icon === 'string') {
+      this._icon = new Icon(options.icon);
+    } else {
+      this._icon = options.icon;
+    }
+    console.log(this._resize);
   }
 
   open() {
@@ -246,8 +252,12 @@ export class WindowApp {
    * @param {string} unit - Unidade de medida (px, %, etc.)
    */
   setPosition(x, y, unit = "px" ) {
-    this._window.style.left = `${x}${unit}`;
-    this._window.style.top = `${y}${unit}`;
+    try {
+      this._window.style.left = `${x}${unit}`;
+      this._window.style.top = `${y}${unit}`;
+    } catch (error) {
+      console.error('Erro ao definir a posição da janela:', error);
+    }
   }
 
   /**
