@@ -2,24 +2,12 @@ import { DragManager } from '../managers/DragManager.js';
 import { ResizeManager } from '../managers/ResizeManager.js';
 import { CollisionManager } from '../managers/CollisionManager.js';
 import { pushAppIconToDock, removeAppIconFromDock } from './NavBarDock.js';
+import Icon from './Icons.js';
 
-class Icon {
-  constructor(src='') {
-    this._src = src;
-  }
-
-  get src() {
-    return this._src;
-  }
-
-  setSrc(src) {  
-    this._src = src;
-  }
-}
 
 
 export class WindowApp {
-  constructor(name, id, options={resize: true, icon: './src/assets/images/M.png'}) {
+  constructor(name, id, options = { resize: true, icon: './src/assets/images/M.png' }) {
     this._options = options;
     this._name = name;
     this._id = this.validateId(id);
@@ -36,9 +24,11 @@ export class WindowApp {
   }
 
   open() {
-    pushAppIconToDock({name: this._name, id: this._id, src: this._icon.src, alt: this._name, command: () => {
-      this.close();
-    }});
+    pushAppIconToDock({
+      name: this._name, id: this._id, src: this._icon.src, alt: this._name, command: () => {
+        this.close();
+      }
+    });
     this._window = this.createWindow();
     this._window.classList.add('glass');
     this._window.classList.add('window');
@@ -134,7 +124,7 @@ export class WindowApp {
     setTimeout(() => {
       if (this._window && this._window.parentNode) {
         this._window.parentNode.removeChild(this._window);
-        removeAppIconFromDock({id: this._id});
+        removeAppIconFromDock({ id: this._id });
       }
       this._window = null;
     }, 300);
@@ -231,7 +221,7 @@ export class WindowApp {
         _maximizeButton.classList.add('maximize-button');
         _maximizeButton.innerHTML = '<i class="fas fa-window-maximize"></i>';
         _maximizeButton.addEventListener('click', () => this.maximize());
-        const minimizeButton = this._window?.querySelector('.minimize-button'); 
+        const minimizeButton = this._window?.querySelector('.minimize-button');
         minimizeButton.insertAdjacentElement('afterend', _maximizeButton);
       }
     } else {
@@ -251,7 +241,7 @@ export class WindowApp {
    * @param {number} y - Posição Y da janela em pixels
    * @param {string} unit - Unidade de medida (px, %, etc.)
    */
-  setPosition(x, y, unit = "px" ) {
+  setPosition(x, y, unit = "px") {
     try {
       this._window.style.left = `${x}${unit}`;
       this._window.style.top = `${y}${unit}`;
