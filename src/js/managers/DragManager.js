@@ -122,6 +122,8 @@ export class DragManager {
     let dx = e.clientX - startX;
     let dy = e.clientY - startY;
 
+    // Isso me faz lembrar das aulas de física...
+
     // Aplica grid se definido
     if (options.grid) {
       const [gridX, gridY] = options.grid;
@@ -215,4 +217,6 @@ export class DragManager {
     }
     return null;
   }
-} 
+}
+
+// Pode não parecer, mas esse código é complexo mesmo!

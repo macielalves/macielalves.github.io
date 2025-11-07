@@ -65,10 +65,27 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.desktop-link .desktop-link-icon {
+  position: relative;
+}
+
 .desktop-link img {
   width: 48px;
   height: 48px;
   margin-bottom: 8px;
+}
+
+.desktop-link i {
+  font-style: normal;
+  font-size: 16px;
+  margin-bottom: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  background-color: aliceblue;
+  border-radius: 2px;
+  padding: 0 2px;
+  color: black;
 }
 
 .desktop-link span {

@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     desktop.appendChild(createDesktopIcon({ name: 'Lixeira', id: 'trash', command: createTrashWindow, src: 'https://img.icons8.com/?size=100&id=pre7LivdxKxJ&format=png&color=000000' }));
     desktop.appendChild(createDesktopIcon({ name: 'cmd', id: 'cmd', command: createCmdWindow, src: 'https://img.icons8.com/?size=100&id=gagNo02GtaUp&format=png&color=000000' }));
     desktop.appendChild(createDesktopIcon({ name: 'calc', id: 'calc', command: createCalcWindow, src: 'https://raw.githubusercontent.com/macielalves/McCalc/main/img/icon.png' }));
-  
     desktop.appendChild(createDesktopIcon({
       name: 'Navegador',
       id: 'browser',
@@ -149,8 +148,11 @@ function createDesktopLink({ name, href = null, target = '_blank', src = "src/as
   link.href = href;
   link.target = target;
   link.innerHTML = `
-    <img src="${src}" alt="${alt || name}">
-    <span>${name}</span>
+    <div class="desktop-link-icon">
+      <img src="${src}" alt="${alt || name}">
+      <i>➚</i>
+    </div>
+    <span class="desktop-link-label">${name}</span>
   `;
   return link
 }

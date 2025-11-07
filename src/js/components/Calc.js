@@ -1,6 +1,7 @@
 /**
  * @module Calc
  * @description Módulo que implementa uma calculadora com operações básicas
+ * @link https://github.com/macielalves/McCalc
  * @author Maciel Alves
  * @version 1.0.0
  * @since 2024-01-01
@@ -34,27 +35,27 @@ export class Calc {
         <button class="calc-btn operator">±</button>
         <button class="calc-btn operator">%</button>
         <button class="calc-btn operator">÷</button>
-        
+
         <button class="calc-btn number">7</button>
         <button class="calc-btn number">8</button>
         <button class="calc-btn number">9</button>
         <button class="calc-btn operator">×</button>
-        
+
         <button class="calc-btn number">4</button>
         <button class="calc-btn number">5</button>
         <button class="calc-btn number">6</button>
         <button class="calc-btn operator">-</button>
-        
+
         <button class="calc-btn number">1</button>
         <button class="calc-btn number">2</button>
         <button class="calc-btn number">3</button>
         <button class="calc-btn operator">+</button>
-        
+
         <button class="calc-btn number zero">0</button>
         <button class="calc-btn number">.</button>
         <button class="calc-btn equals">=</button>
       </div>
-    `;
+    `; // Sei lá. Eu poderia fazer uma função pra isso, mas tá bom assim.
 
         this.display = calculator.querySelector('#display');
         this.buttons = calculator.querySelector('#buttons');
@@ -101,7 +102,7 @@ export class Calc {
             this.display.value = '';
             this.shouldResetDisplay = false;
         }
-        
+
         if (value === '.' && this.display.value.includes('.')) return;
         if (value === '0' && this.display.value === '0') return;
 
@@ -196,3 +197,6 @@ export class Calc {
     }
 }
 
+// Essa calculadora é baseada no meu outro projeto de calculadora open source:
+// https://github.com/macielalves/McCalc
+// É uma forma de canalizar a raiva e frustração de tentar fazer algo funcionar!

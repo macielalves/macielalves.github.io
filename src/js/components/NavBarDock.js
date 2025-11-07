@@ -1,6 +1,8 @@
+'use strict';
+
 import { addOrAppendElement, validateId } from '../utils.js';
 
-
+// todo - adicionar funcionalidades de arrastar e soltar ícones no dock
 export class NavBarDock {
   constructor() {
     this.dock = document.createElement('div');
@@ -20,6 +22,10 @@ export class NavBarDock {
     this.dock.querySelector('.dock-container').style.gridTemplateRows = rows;
   }
 
+  /**
+   * Adiciona um item ao dock
+   * @param {DockItem} item
+   */
   addDockItem(item) {
     this.dock.querySelector('.dock-container').appendChild(item.getItem());
   }
@@ -144,7 +150,7 @@ export class DockIcon {
    */
   getIcon() {
     return this._icon;
-  } 
+  }
 
   handleClick() {
     if (this._icon._command) {

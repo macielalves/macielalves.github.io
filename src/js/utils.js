@@ -12,11 +12,11 @@ export function getRandomNumber(min, max) {
 
 export function getRandomFloat(min, max) {
   return Math.random() * (max - min) + min;
-}   
+}
 
 export function getRandomBoolean() {
   return Math.random() < 0.5;
-}   
+}
 
 export function getRandomDate() {
   return new Date(Math.random() * (Date.now() - Date.now() - 1000 * 60 * 60 * 24 * 365));
@@ -24,11 +24,11 @@ export function getRandomDate() {
 
 export function getRandomString(length) {
   return Math.random().toString(36).substring(2, length + 2);
-}   
+}
 
 export function getRandomArray(length) {
   return Array.from({ length }, () => getRandomString(getRandomNumber(1, 10)));
-}   
+}
 
 export function addOrAppendElement(el, parent){
     if (typeof el === 'string') {
@@ -41,6 +41,7 @@ export function addOrAppendElement(el, parent){
     }
 }
 
+// todo - melhorar essa função para evitar ids repetidos
 export function validateId(id) {
   let validId = id;
   let counter = 1;
