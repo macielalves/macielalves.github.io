@@ -1,7 +1,7 @@
 import { WindowApp } from './components/WindowApp.js';
 import { Calc } from './components/Calc.js';
 import { SubBrowser } from './managers/SubBrowser.js';
-import { NavBarDock, DockItem } from './components/NavBarDock.js';
+import { NavBarDock, DockSection} from './components/NavBarDock.js';
 import { SubCmd } from './managers/SubCmd.js';
 
 document.author = 'Maciel Alves';
@@ -53,13 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  const appsBar = new DockItem({ id: 'apps-bar' });
-  const toolsBar = new DockItem({ title: '^', id: 'tools-bar' });
-  const clockBar = new DockItem({ title: 'clock', id: 'clock-bar' });
+  const appsBar = new DockSection({ id: 'apps-bar' });
+  const toolsBar = new DockSection({ title: '^', id: 'tools-bar' });
+  const clockBar = new DockSection({ title: 'clock', id: 'clock-bar' });
   // Adicionar itens na barra de tarefas
-  navBarDock.addDockItem(appsBar);
-  navBarDock.addDockItem(toolsBar);
-  navBarDock.addDockItem(clockBar);
+  // todo - Corrigir o erro do menu aparecendo neles também
+  navBarDock.addDockSection(appsBar);
+  // navBarDock.addDockSection(toolsBar);
+  // navBarDock.addDockSection(clockBar);
 
   setTimeout(async () => {
     const lastCommitDate = await getLastCommitDate();

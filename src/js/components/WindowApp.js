@@ -1,13 +1,30 @@
 import { DragManager } from '../managers/DragManager.js';
 import { ResizeManager } from '../managers/ResizeManager.js';
 import { CollisionManager } from '../managers/CollisionManager.js';
-import { pushAppIconToDock, removeAppIconFromDock } from './NavBarDock.js';
+import { pushAppToDock, removeAppIconFromDock } from './NavBarDock.js';
 import Icon from './Icons.js';
 
 
 
 export class WindowApp {
-  constructor(name, id, options = { resize: true, icon: './src/assets/images/M.png' }) {
+  static options = {
+    resize: true,
+    icon: './src/assets/images/M.png',
+    dockMenu: null,
+  };
+
+  /**
+   * @description Cria uma janela de aplicação
+   * @param {string} name - Nome da aplicação
+   * @param {string} id - ID da janela
+   * @param {Object} options - Opções da janela
+   * options = {
+   *   resize: true/false,          // Habilita/desabilita redimensionamento
+   *   icon: Icon/String,          // Ícone da aplicação
+   *   dockMenu: DockMenu,         // Menu do ícone na dock
+   * }
+   */
+  constructor(name, id, options = {}) {
     this._options = options;
     this._name = name;
     this._id = this.validateId(id);
@@ -15,19 +32,20 @@ export class WindowApp {
     this._dragManager = new DragManager();
     this._resize = options.resize === undefined ? true : options.resize;
     this._hidden = false;
+    this._dockMenu = options.dockMenu || null;
     if (typeof options.icon === 'string') {
       this._icon = new Icon(options.icon);
     } else {
       this._icon = options.icon;
     }
-    console.log(this._resize);
+    // console.log(this._resize);
   }
 
   open() {
-    pushAppIconToDock({
-      name: this._name, id: this._id, src: this._icon.src, alt: this._name, command: () => {
-        this.close();
-      }
+    pushAppToDock({
+      name: this._name, id: this._id, command: () => {
+        this.minimize();
+      }, menuOptions: [], icon: this._icon.src,
     });
     this._window = this.createWindow();
     this._window.classList.add('glass');
