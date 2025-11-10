@@ -98,7 +98,7 @@ export class WindowApp {
   setupWindowControls() {
     const minimizeButton = this._window.querySelector('.minimize-button');
     const maximizeButton = this._window.querySelector('.maximize-button');
-    const closeButton = this._window.querySelector('.close-button');
+    const closeButton    = this._window.querySelector('.close-button');
 
     if (minimizeButton) {
       minimizeButton.addEventListener('click', () => this.minimize());
@@ -224,6 +224,7 @@ export class WindowApp {
     const maximizeButton = this._window?.querySelector('.maximize-button');
     if (this._resize && !this._resizeManager) {
       this._resizeManager = new ResizeManager({
+        handles: ['e', 's', 'w', 'se', 'sw'],// sem n, ne, nw para ocultar o resize para cima
         onResizeStart: (el) => {
           el.classList.add('no-drag'); // Previne drag durante resize
         },
