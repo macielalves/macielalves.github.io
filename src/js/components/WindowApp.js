@@ -68,14 +68,14 @@ export class WindowApp {
           <div class="window" id="${this._id}" data-window-id="${this._id}">
               <div class="window-header">
                 <div class="window-controls">
+                  <div class="window-button close-button">
+                    <i class="fas fa-times"></i>
+                  </div>
                   <div class="window-button minimize-button">
                     <i class="fas fa-window-minimize"></i>
                   </div>
                   <div class="window-button maximize-button">
                     <i class="fas fa-window-maximize"></i>
-                  </div>
-                  <div class="window-button close-button">
-                    <i class="fas fa-times"></i>
                   </div>
                 </div>
                 <div class="window-title">${this._name}</div>
